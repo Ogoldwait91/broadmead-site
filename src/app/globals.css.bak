@@ -334,30 +334,3 @@ body[data-scrolled="true"] [data-header] a:hover{
   color: rgba(15,25,30,0.95);
 }
 /* --- end header contrast --- */
-/* ===== TOP BAR (Pig-style, CSS-driven) ===== */
-header[data-header]{
-  color: rgba(255,255,255,.92);
-  background: transparent;
-  border-bottom: 1px solid rgba(255,255,255,.12);
-}
-header[data-header] a{ color: inherit; }
-header[data-header] nav a{ color: inherit; }
-
-/* CTA pill */
-header[data-header] a[href="#book"]{
-  border-color: rgba(255,255,255,.30);
-  background: rgba(255,255,255,.06);
-}
-
-/* Scrolled state */
-body[data-scrolled="true"] header[data-header]{
-  color: var(--ink);
-  background: rgba(246,248,247,.90);
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 8px 22px rgba(15,31,38,.08);
-}
-body[data-scrolled="true"] header[data-header] a[href="#book"]{
-  border-color: var(--line);
-  background: rgba(255,255,255,.55);
-}
-/* ===== END TOP BAR ===== */

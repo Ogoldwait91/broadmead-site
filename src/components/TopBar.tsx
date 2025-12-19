@@ -1,0 +1,164 @@
+﻿"use client";
+
+
+import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
+
+type NavItem = { label: string; href: string };
+
+export default function TopBar() {
+  const nav: NavItem[] = useMemo(
+    () => [
+      { label: "Rooms", href: "#rooms" },
+      { label: "Breakfast", href: "#breakfast" },
+      { label: "Local Area", href: "#local-area" },
+      { label: "Gallery", href: "#gallery" },
+      { label: "Contact", href: "#contact" },
+    ],
+    []
+  );
+
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close mobile menu on resize up
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  return (
+    <header className="sticky top-0 z-50">
+      {/* Announcement strip (optional) */}
+      <div className="border-b border-black/10 bg-white/60 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 text-xs tracking-wide text-black/70">
+          <span className="truncate">
+            Winter stays: late checkout + locally roasted coffee.
+          </span>
+          <a className="shrink-0 underline underline-offset-4 hover:text-black" href="#offers">
+            View offers
+          </a>
+        </div>
+      </div>
+
+      {/* Main bar */}
+      <div
+        className={[
+          "border-b border-black/10 bg-white/70 backdrop-blur",
+          scrolled ? "shadow-sm" : "",
+        ].join(" ")}
+      >
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+          {/* Brand */}
+          <a href="/" className="group flex items-baseline gap-2">
+            <span className="font-serif text-lg tracking-tight text-black">
+              Broadmead
+            </span>
+            <span className="hidden text-[11px] tracking-[0.22em] text-black/60 sm:inline">
+              BOUTIQUE B&amp;B
+            </span>
+            <span className="block h-[1px] w-0 bg-black/70 transition-all duration-300 group-hover:w-10" />
+          </a>
+
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-6 lg:flex">
+            {nav.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm text-black/75 transition hover:text-black"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Actions */}
+          <div className="flex items-center gap-2">
+            <a
+              href="tel:+441234567890"
+              className="hidden rounded-full border border-black/15 bg-white/50 px-4 py-2 text-sm text-black/80 transition hover:border-black/25 hover:text-black sm:inline-flex"
+            >
+              Call
+            </a>
+
+            <a
+              href="#book"
+              className="inline-flex items-center justify-center rounded-full bg-black px-4 py-2 text-sm text-white shadow-sm transition hover:opacity-90"
+            >
+              Book a Room
+            </a>
+
+            {/* Mobile menu button */}
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white/50 text-black/80 transition hover:border-black/25 hover:text-black lg:hidden"
+              aria-label="Open menu"
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+            >
+              <span className="sr-only">Menu</span>
+              <div className="flex flex-col gap-1">
+                <span className={["h-[2px] w-5 bg-current transition", open ? "translate-y-[3px] rotate-45" : ""].join(" ")} />
+                <span className={["h-[2px] w-5 bg-current transition", open ? "opacity-0" : ""].join(" ")} />
+                <span className={["h-[2px] w-5 bg-current transition", open ? "-translate-y-[5px] -rotate-45" : ""].join(" ")} />
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile menu */}
+        <div className={open ? "block" : "hidden"}>
+          <div className="mx-auto max-w-6xl px-4 pb-5">
+            <div className="rounded-2xl border border-black/10 bg-white/70 p-3 backdrop-blur">
+              <div className="flex flex-col">
+                {nav.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-xl px-3 py-3 text-sm text-black/80 hover:bg-black/5 hover:text-black"
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <div className="mt-2 grid grid-cols-2 gap-2">
+                  <a
+                    href="#directions"
+                    className="rounded-xl border border-black/10 bg-white/60 px-3 py-3 text-center text-sm text-black/80 hover:border-black/20 hover:text-black"
+                    onClick={() => setOpen(false)}
+                  >
+                    Directions
+                  </a>
+                  <a
+                    href="tel:+441234567890"
+                    className="rounded-xl border border-black/10 bg-white/60 px-3 py-3 text-center text-sm text-black/80 hover:border-black/20 hover:text-black"
+                    onClick={() => setOpen(false)}
+                  >
+                    Call
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-3 text-xs text-black/55">
+              Tenby, Pembrokeshire Â· Check-in 3pm Â· Breakfast until 10:30
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+
