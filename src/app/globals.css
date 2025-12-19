@@ -426,7 +426,7 @@ header .announcement a{
    ========================= */
 
 :root{
-  --header-h: 112px; /* keep in sync with layout padding */
+  --header-h: 84px; /* keep in sync with layout padding */
 }
 
 /* Pull hero up to remove the white band caused by main padding */
@@ -449,7 +449,7 @@ header .announcement a{
   background:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.45) 0%,
       rgba(0,0,0,0.30) 35%,
       rgba(0,0,0,0.15) 60%,
       rgba(0,0,0,0.08) 100%
@@ -475,3 +475,154 @@ header .announcement a{
   position: relative;
   z-index: 1;
 }
+
+/* =========================
+   SLICK SYSTEM LAYER
+   ========================= */
+
+:root{
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --shadow-soft: 0 18px 40px rgba(15,31,38,0.14);
+  --shadow-card: 0 14px 28px rgba(15,31,38,0.12);
+  --section-y: 84px;
+}
+
+.section{
+  padding: var(--section-y) 0;
+}
+
+.kicker{
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.72;
+}
+
+h1, h2, h3{
+  letter-spacing: -0.02em;
+}
+
+.surface{
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.btn{
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 600;
+  transition: transform .25s ease, filter .25s ease, background-color .25s ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  filter: saturate(105%);
+}
+
+.btnSolid{
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.22);
+}
+
+.btnGhost{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* Hero typography */
+.heroTitle{
+  font-size: clamp(42px, 4.6vw, 64px);
+  line-height: 1.02;
+  margin-top: 16px;
+  max-width: 640px;
+}
+
+.heroCopy{
+  margin-top: 14px;
+  color: rgba(255,255,255,.84);
+  font-size: 18px;
+  max-width: 520px;
+}
+
+.heroCtas{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+/* Mobile refinements */
+@media (max-width: 900px){
+  :root{ --section-y: 64px; }
+  .heroTitle{ font-size: clamp(36px, 9vw, 52px); }
+}
+
+/* ===== Pig-style gallery strip polish ===== */
+.pigGallery{
+  margin-top: 18px;
+}
+
+.pigTile{
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 18px 42px rgba(15,31,38,0.14);
+  border: 1px solid rgba(255,255,255,0.06);
+  transform: translateY(0);
+  transition: transform .35s ease, filter .35s ease;
+}
+.pigTile:hover{
+  transform: translateY(-3px);
+  filter: saturate(103%);
+}
+
+.pigCaption{
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  color: rgba(255,255,255,.92);
+  text-shadow: 0 2px 20px rgba(0,0,0,.55);
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.pigCaption::before{
+  content:"";
+  position:absolute;
+  left:-8px;
+  right:-8px;
+  bottom:-8px;
+  top:-8px;
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.32));
+  z-index: -1;
+  border-radius: 16px;
+}
+
+.pigGalleryFooter{
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.pigGalleryNote{
+  max-width: 720px;
+  opacity: 0.88;
+}
+
+/* make the gallery link feel intentional */
+.pigGalleryLink{
+  opacity: .82;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(15,31,38,.28);
+  padding-bottom: 2px;
+}
+.pigGalleryLink:hover{
+  opacity: 1;
+  border-bottom-color: rgba(15,31,38,.48);
+}
+

@@ -5,13 +5,12 @@ export default function HomePage() {
   return (
     <div>
       {/* HERO (full-bleed, proper overlay, readable text) */}
-      <section className="fullBleed hero heroBleed" style={{ position: "relative", height: "92vh", minHeight: 620 }}>
+      <section className="fullBleed hero heroBleed" style={{ position: "relative", height: "100vh", minHeight: 640 }}>
         <Image
           src="/images/hero.jpg"
           alt="Broadmead Boutique B&B exterior"
           fill
           priority
-          quality={90}
           sizes="100vw"
           style={{ objectFit: "cover" }}
         />
@@ -84,107 +83,92 @@ export default function HomePage() {
         </div>
       </section>
 
-            {/* HOUSE IMAGES (Pig-style: calm, editorial) */}
+      {/* HOUSE IMAGES (Pig-style: calm, editorial) */}
       <section className="section" style={{ paddingTop: 10 }}>
         <div className="container">
-          <div className="pigGallery" style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(12, minmax(0, 1fr))" }}>
-            {/* big tile */}
-            <div className="pigTile" style={{ gridColumn: "span 7", height: 360 }}>
-              <Image
-                src="/images/dining.webp"
-                alt="Dining room"
-                fill
-                sizes="(max-width: 1120px) 70vw, 760px"
-                style={{ objectFit: "cover" }}
-              />
-              <div className="pigCaption">Dining room</div>
+          <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(12, minmax(0, 1fr))" }}>
+            <div className="surface" style={{ gridColumn: "span 7", overflow: "hidden", position: "relative", height: 360 }}>
+              <Image src="/images/dining.webp" alt="Dining room" fill sizes="(max-width: 1120px) 70vw, 760px" style={{ objectFit: "cover" }} />
+              <div style={{ position: "absolute", left: 14, bottom: 12, color: "rgba(255,255,255,.92)", textShadow: "0 2px 18px rgba(0,0,0,.55)", fontSize: 13, letterSpacing: ".14em", textTransform: "uppercase" }}>
+                Dining room
+              </div>
             </div>
 
-            {/* right column */}
             <div style={{ gridColumn: "span 5", display: "grid", gap: 16 }}>
-              <div className="pigTile" style={{ height: 172 }}>
-                <Image
-                  src="/images/lounge.webp"
-                  alt="Lounge"
-                  fill
-                  sizes="(max-width: 1120px) 40vw, 520px"
-                  style={{ objectFit: "cover" }}
-                />
-                <div className="pigCaption">Lounge & fireside</div>
+              <div className="surface" style={{ overflow: "hidden", position: "relative", height: 172 }}>
+                <Image src="/images/lounge.webp" alt="Lounge" fill sizes="(max-width: 1120px) 40vw, 520px" style={{ objectFit: "cover" }} />
+                <div style={{ position: "absolute", left: 14, bottom: 12, color: "rgba(255,255,255,.92)", textShadow: "0 2px 18px rgba(0,0,0,.55)", fontSize: 13, letterSpacing: ".14em", textTransform: "uppercase" }}>
+                  Lounge & fireside
+                </div>
               </div>
 
               <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
-                <div className="pigTile" style={{ height: 172 }}>
-                  <Image
-                    src="/images/garden.webp"
-                    alt="Garden"
-                    fill
-                    sizes="(max-width: 1120px) 20vw, 260px"
-                    style={{ objectFit: "cover" }}
-                  />
-                  <div className="pigCaption">Garden</div>
+                <div className="surface" style={{ overflow: "hidden", position: "relative", height: 172 }}>
+                  <Image src="/images/garden.webp" alt="Garden" fill sizes="(max-width: 1120px) 20vw, 260px" style={{ objectFit: "cover" }} />
+                  <div style={{ position: "absolute", left: 12, bottom: 10, color: "rgba(255,255,255,.92)", textShadow: "0 2px 18px rgba(0,0,0,.55)", fontSize: 12, letterSpacing: ".14em", textTransform: "uppercase" }}>
+                    Garden
+                  </div>
                 </div>
 
-                <div className="pigTile" style={{ height: 172 }}>
-                  <Image
-                    src="/images/rear-view.webp"
-                    alt="The house"
-                    fill
-                    sizes="(max-width: 1120px) 20vw, 260px"
-                    style={{ objectFit: "cover" }}
-                  />
-                  <div className="pigCaption">The house</div>
+                <div className="surface" style={{ overflow: "hidden", position: "relative", height: 172 }}>
+                  <Image src="/images/rear-view.webp" alt="The house" fill sizes="(max-width: 1120px) 20vw, 260px" style={{ objectFit: "cover" }} />
+                  <div style={{ position: "absolute", left: 12, bottom: 10, color: "rgba(255,255,255,.92)", textShadow: "0 2px 18px rgba(0,0,0,.55)", fontSize: 12, letterSpacing: ".14em", textTransform: "uppercase" }}>
+                    The house
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="pigGalleryFooter">
-            <div className="pigGalleryNote">
+          <div style={{ marginTop: 14, display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+            <div style={{ maxWidth: 740, opacity: 0.9 }}>
               Quiet spaces, good light, and the kind of comfort you settle into quickly.
             </div>
-            <Link href="/gallery" className="pigGalleryLink">
+            <Link href="/gallery" className="navLink" style={{ color: "var(--text)" }}>
               View the full gallery
             </Link>
           </div>
         </div>
       </section>
 
-      {/* EAT & DRINK (Pig-style: the experience sells) */}
-      <section className="section" style={{ paddingTop: 0 }}>
+            {/* EAT & DRINK (Pig-style: food + hospitality) */}
+      <section className="section">
         <div className="container">
-          <div style={{ display: "grid", gap: 24, gridTemplateColumns: "1.1fr .9fr", alignItems: "start" }}>
+          <div style={{ display: "grid", gap: 28, gridTemplateColumns: "1.1fr .9fr", alignItems: "start" }}>
             <div>
               <div className="kicker">Eat & drink</div>
-              <h2 style={{ fontSize: 34, marginTop: 12 }}>Breakfast worth getting up for.</h2>
-              <p style={{ marginTop: 16, maxWidth: 660, opacity: 0.9, lineHeight: 1.7 }}>
-                We keep mornings calm: good coffee, local produce, and a dining room that feels light and unhurried.
-                If you’re heading out early for a coastal walk, we’ll help you start well.
+              <h2 style={{ fontSize: 34, marginTop: 12 }}>Locally sourced breakfasts, unhurried mornings.</h2>
+              <p style={{ marginTop: 16, maxWidth: 640, opacity: 0.9 }}>
+                Start the day slowly: great coffee, thoughtful ingredients, and a table set for conversation.
+                We’re a short walk from Tenby’s harbour and restaurants — but many guests tell us breakfast is a highlight.
               </p>
-              <ul style={{ marginTop: 14, paddingLeft: 18, opacity: 0.9, lineHeight: 1.9 }}>
-                <li>Seasonal, locally sourced breakfast</li>
-                <li>Dietary requirements welcomed with notice</li>
-                <li>Recommendations for the best dinner in Tenby</li>
+              <ul style={{ marginTop: 16, paddingLeft: 18, opacity: 0.9, lineHeight: 1.8 }}>
+                <li>Seasonal breakfast menu with local produce</li>
+                <li>Fresh coffee and a calm dining room</li>
+                <li>Dietary needs welcomed with notice</li>
               </ul>
-              <div style={{ marginTop: 16 }}>
+              <div style={{ marginTop: 18 }}>
                 <Link href="/contact" className="navLink" style={{ color: "var(--text)" }}>
-                  Ask about breakfast, timings, and local recommendations
+                  Ask about breakfast & dietary requirements
                 </Link>
               </div>
             </div>
 
             <div className="surface" style={{ padding: 18 }}>
-              <div className="kicker">A note from the house</div>
-              <h3 style={{ fontSize: 20, marginTop: 10 }}>We’ll point you to the best Tenby.</h3>
-              <p style={{ marginTop: 12, fontSize: 14, opacity: 0.9, lineHeight: 1.7 }}>
-                Harbour walks, the right beach for the tide, a table that’s worth booking —
-                we’ll guide you to what’s best on the day.
+              <div className="kicker">The lounge</div>
+              <h3 style={{ fontSize: 20, marginTop: 10 }}>A place to read, plan, and unwind.</h3>
+              <p style={{ marginTop: 12, fontSize: 14, opacity: 0.9 }}>
+                Soft seating, warm light, and space to settle in after the beach — perfect for a quiet hour before dinner.
               </p>
+              <div style={{ marginTop: 14, fontSize: 13, opacity: 0.75 }}>
+                Photos coming soon — you’ll upload dining and lounge images next.
+              </div>
             </div>
           </div>
         </div>
       </section>
-{/* THE ROOMS (quiet, not “shopfront”) */}
+
+      {/* THE ROOMS (quiet, not “shopfront”) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div style={{ display: "grid", gap: 22, gridTemplateColumns: "1fr" }}>
@@ -195,7 +179,7 @@ export default function HomePage() {
                 We’ve kept the rooms calm and comfortable — good linens, space to unpack, and the kind of quiet you only notice when it’s there.
               </p>
               <div style={{ marginTop: 14 }}>
-                <Link href="/rooms" className="pigGalleryLink">
+                <Link href="/rooms" className="navLink" style={{ color: "var(--text)" }}>
                   View rooms & details
                 </Link>
               </div>
@@ -215,7 +199,7 @@ export default function HomePage() {
                 A few favourites to help you plan a perfect couple of days — beaches, harbour walks, and places we genuinely recommend.
               </p>
             </div>
-            <Link href="/explore" className="pigGalleryLink">All recommendations</Link>
+            <Link href="/explore" className="navLink" style={{ color: "var(--text)" }}>All recommendations</Link>
           </div>
 
           <div
@@ -236,7 +220,7 @@ export default function HomePage() {
                 <h3 style={{ fontSize: 18, marginTop: 10 }}>{c.title}</h3>
                 <p style={{ marginTop: 10, fontSize: 14, opacity: 0.9 }}>{c.note}</p>
                 <div style={{ marginTop: 12 }}>
-                  <Link href="/explore" className="pigGalleryLink">
+                  <Link href="/explore" className="navLink" style={{ color: "var(--text)" }}>
                     See details
                   </Link>
                 </div>
@@ -272,10 +256,6 @@ export default function HomePage() {
     </div>
   );
 }
-
-
-
-
 
 
 

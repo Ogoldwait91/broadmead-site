@@ -5,13 +5,12 @@ export default function HomePage() {
   return (
     <div>
       {/* HERO (full-bleed, proper overlay, readable text) */}
-      <section className="fullBleed hero heroBleed" style={{ position: "relative", height: "92vh", minHeight: 620 }}>
+      <section className="fullBleed hero heroBleed" style={{ position: "relative", height: "100vh", minHeight: 640 }}>
         <Image
           src="/images/hero.jpg"
           alt="Broadmead Boutique B&B exterior"
           fill
           priority
-          quality={90}
           sizes="100vw"
           style={{ objectFit: "cover" }}
         />
@@ -84,55 +83,29 @@ export default function HomePage() {
         </div>
       </section>
 
-            {/* HOUSE IMAGES (Pig-style: calm, editorial) */}
+      {/* HOUSE IMAGES (Pig-style: calm, editorial) */}
       <section className="section" style={{ paddingTop: 10 }}>
         <div className="container">
-          <div className="pigGallery" style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(12, minmax(0, 1fr))" }}>
-            {/* big tile */}
+          <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(12, minmax(0, 1fr))" }} className="pigGallery">
             <div className="pigTile" style={{ gridColumn: "span 7", height: 360 }}>
-              <Image
-                src="/images/dining.webp"
-                alt="Dining room"
-                fill
-                sizes="(max-width: 1120px) 70vw, 760px"
-                style={{ objectFit: "cover" }}
-              />
+              <Image src="/images/dining.webp" alt="Dining room" fill sizes="(max-width: 1120px) 70vw, 760px" style={{ objectFit: "cover" }} />
               <div className="pigCaption">Dining room</div>
             </div>
 
-            {/* right column */}
             <div style={{ gridColumn: "span 5", display: "grid", gap: 16 }}>
               <div className="pigTile" style={{ height: 172 }}>
-                <Image
-                  src="/images/lounge.webp"
-                  alt="Lounge"
-                  fill
-                  sizes="(max-width: 1120px) 40vw, 520px"
-                  style={{ objectFit: "cover" }}
-                />
+                <Image src="/images/lounge.webp" alt="Lounge" fill sizes="(max-width: 1120px) 40vw, 520px" style={{ objectFit: "cover" }} />
                 <div className="pigCaption">Lounge & fireside</div>
               </div>
 
               <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
                 <div className="pigTile" style={{ height: 172 }}>
-                  <Image
-                    src="/images/garden.webp"
-                    alt="Garden"
-                    fill
-                    sizes="(max-width: 1120px) 20vw, 260px"
-                    style={{ objectFit: "cover" }}
-                  />
+                  <Image src="/images/garden.webp" alt="Garden" fill sizes="(max-width: 1120px) 20vw, 260px" style={{ objectFit: "cover" }} />
                   <div className="pigCaption">Garden</div>
                 </div>
 
                 <div className="pigTile" style={{ height: 172 }}>
-                  <Image
-                    src="/images/rear-view.webp"
-                    alt="The house"
-                    fill
-                    sizes="(max-width: 1120px) 20vw, 260px"
-                    style={{ objectFit: "cover" }}
-                  />
+                  <Image src="/images/rear-view.webp" alt="The house" fill sizes="(max-width: 1120px) 20vw, 260px" style={{ objectFit: "cover" }} />
                   <div className="pigCaption">The house</div>
                 </div>
               </div>
@@ -184,7 +157,45 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-{/* THE ROOMS (quiet, not “shopfront”) */}
+
+            {/* EAT & DRINK (Pig-style: food + hospitality) */}
+      <section className="section">
+        <div className="container">
+          <div style={{ display: "grid", gap: 28, gridTemplateColumns: "1.1fr .9fr", alignItems: "start" }}>
+            <div>
+              <div className="kicker">Eat & drink</div>
+              <h2 style={{ fontSize: 34, marginTop: 12 }}>Locally sourced breakfasts, unhurried mornings.</h2>
+              <p style={{ marginTop: 16, maxWidth: 640, opacity: 0.9 }}>
+                Start the day slowly: great coffee, thoughtful ingredients, and a table set for conversation.
+                We’re a short walk from Tenby’s harbour and restaurants — but many guests tell us breakfast is a highlight.
+              </p>
+              <ul style={{ marginTop: 16, paddingLeft: 18, opacity: 0.9, lineHeight: 1.8 }}>
+                <li>Seasonal breakfast menu with local produce</li>
+                <li>Fresh coffee and a calm dining room</li>
+                <li>Dietary needs welcomed with notice</li>
+              </ul>
+              <div style={{ marginTop: 18 }}>
+                <Link href="/contact" className="pigGalleryLink">
+                  Ask about breakfast & dietary requirements
+                </Link>
+              </div>
+            </div>
+
+            <div className="surface" style={{ padding: 18 }}>
+              <div className="kicker">The lounge</div>
+              <h3 style={{ fontSize: 20, marginTop: 10 }}>A place to read, plan, and unwind.</h3>
+              <p style={{ marginTop: 12, fontSize: 14, opacity: 0.9 }}>
+                Soft seating, warm light, and space to settle in after the beach — perfect for a quiet hour before dinner.
+              </p>
+              <div style={{ marginTop: 14, fontSize: 13, opacity: 0.75 }}>
+                Photos coming soon — you’ll upload dining and lounge images next.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* THE ROOMS (quiet, not “shopfront”) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div style={{ display: "grid", gap: 22, gridTemplateColumns: "1fr" }}>
@@ -272,8 +283,6 @@ export default function HomePage() {
     </div>
   );
 }
-
-
 
 
 
