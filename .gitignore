@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Backup / scratch files
+*.bak
+*.bak_*
+*.CORRUPT_BACKUP

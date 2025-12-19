@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -626,3 +626,210 @@ h1, h2, h3{
   border-bottom-color: rgba(15,31,38,.48);
 }
 
+
+/* ===== Hero scroll cue (subtle, premium) ===== */
+.heroScrollCue{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+.heroScrollLabel{
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.82);
+  text-shadow: 0 2px 18px rgba(0,0,0,0.45);
+}
+
+.heroScrollLine{
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.55);
+  box-shadow: 0 2px 18px rgba(0,0,0,0.35);
+  animation: heroScrollPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes heroScrollPulse{
+  0%{ transform: translateY(0); opacity: .55; }
+  50%{ transform: translateY(6px); opacity: .95; }
+  100%{ transform: translateY(0); opacity: .55; }
+}
+
+/* ===== Hero CTA contrast fix ===== */
+.hero .btnGhost{
+  color: rgba(255,255,255,0.95);
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.08);
+}
+
+.hero .btnGhost:hover{
+  background: rgba(255,255,255,0.14);
+  color: #ffffff;
+}
+
+/* ===== Tenby editorial rhythm ===== */
+.section p{
+  max-width: 660px;
+}
+
+.section h3{
+  line-height: 1.25;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* ===== Trust signal refinement ===== */
+.trustSignal{
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* ===== Guest quote (Soho House–style) ===== */
+.guestQuote{
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 760px;
+  margin: 0;
+  color: rgba(15,31,38,0.85);
+  font-style: italic;
+  position: relative;
+  padding-left: 28px;
+}
+
+.guestQuote::before{
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -4px;
+  font-size: 40px;
+  line-height: 1;
+  color: rgba(15,31,38,0.25);
+}
+
+/* ===== House notes (Soho House–style) ===== */
+.houseNotes{
+  display: grid;
+  gap: 32px;
+}
+
+.houseNotes h2{
+  font-family: var(--font-serif);
+  font-size: 32px;
+  margin-top: 12px;
+}
+
+.houseNotesGrid{
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.houseNotesGrid h4{
+  font-family: var(--font-serif);
+  font-size: 18px;
+  margin: 0 0 6px 0;
+}
+
+.houseNotesGrid p{
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+@media (max-width: 900px){
+  .houseNotesGrid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Quiet close (editorial footer) ===== */
+.quietClose{
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+}
+
+.quietClose h2{
+  font-family: var(--font-serif);
+  font-size: 32px;
+  max-width: 520px;
+}
+
+.quietClose p{
+  margin-top: 10px;
+  max-width: 420px;
+}
+
+.quietCloseActions{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.quietCloseActions a:first-child{
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .75;
+  text-decoration: none;
+}
+
+.quietCloseActions a:first-child:hover{
+  opacity: 1;
+}
+
+@media (max-width: 900px){
+  .quietClose{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Prevent hero image blur (no hover transforms) --- */
+.hero img,
+.hero picture img{
+  transform: none !important;
+  filter: none !important;
+}
+
+/* ===== Seasonal note ===== */
+.seasonalNote{
+  padding: 28px 0 0;
+}
+
+.seasonalNote p{
+  max-width: 720px;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(15,31,38,0.75);
+}
+
+/* ===== Typography rhythm refinement ===== */
+.section{
+  padding: clamp(72px, 8vw, 96px) 0;
+}
+
+h2{
+  margin-bottom: 12px;
+}
+
+p + p{
+  margin-top: 10px;
+}
+
+.kicker{
+  margin-bottom: 6px;
+}

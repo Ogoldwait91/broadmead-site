@@ -1,11 +1,11 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
     <div>
       {/* HERO (full-bleed, proper overlay, readable text) */}
-      <section className="fullBleed hero heroBleed" style={{ position: "relative", height: "92vh", minHeight: 620 }}>
+      <section className="fullBleed hero heroBleed" style={{ position: "relative", height: "100svh", minHeight: 680 }}>
         <Image
           src="/images/hero.jpg"
           alt="Broadmead Boutique B&B exterior"
@@ -13,7 +13,7 @@ export default function HomePage() {
           priority
           quality={90}
           sizes="100vw"
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "cover", objectPosition: "center 55%" }}
         />
 
         {/* overlay (Pig-style: dark left, lighter right) */}
@@ -39,8 +39,8 @@ export default function HomePage() {
         />
 
         <div style={{ position: "absolute", inset: 0, display: "grid", alignItems: "end" }}>
-          <div className="container" style={{ paddingBottom: 64 }}>
-            <div style={{ maxWidth: 560, color: "white", textShadow: "0 2px 28px rgba(0,0,0,0.55)" }}>
+          <div className="container" style={{ paddingBottom: 76 }}>
+            <div style={{ maxWidth: 640, color: "white", textShadow: "0 2px 28px rgba(0,0,0,0.55)" }}>
               <div className="kicker" style={{ color: "rgba(255,255,255,.86)" }}>
                 Boutique B&B Tenby Pembrokeshire
               </div>
@@ -60,7 +60,7 @@ export default function HomePage() {
 
               <div className="heroCtas">
                 <a className="btn btnSolid" href="#book">Check availability</a>
-                <Link className="btn btnGhost" href="/rooms">View rooms</Link>
+                <Link className="btn btnGhost" href="#house">Explore the house</Link>
               </div>
 
               <div style={{ marginTop: 12, fontSize: 13, color: "rgba(255,255,255,.74)" }}>
@@ -69,10 +69,14 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        <div className="heroScrollCue" aria-hidden="true">
+          <span className="heroScrollLabel">Scroll</span>
+          <span className="heroScrollLine" />
+        </div>
       </section>
 
       {/* HOUSE (editorial, not boxy) */}
-      <section className="section">
+      <section id="house" className="section">
         <div className="container" style={{ display: "grid", gap: 28, gridTemplateColumns: "1fr" }}>
           <div>
             <div className="kicker">The house</div>
@@ -84,7 +88,7 @@ export default function HomePage() {
         </div>
       </section>
 
-            {/* HOUSE IMAGES (Pig-style: calm, editorial) */}
+      {/* HOUSE IMAGES (Pig-style: calm, editorial) */}
       <section className="section" style={{ paddingTop: 10 }}>
         <div className="container">
           <div className="pigGallery" style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(12, minmax(0, 1fr))" }}>
@@ -95,7 +99,7 @@ export default function HomePage() {
                 alt="Dining room"
                 fill
                 sizes="(max-width: 1120px) 70vw, 760px"
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", objectPosition: "center 55%" }}
               />
               <div className="pigCaption">Dining room</div>
             </div>
@@ -108,7 +112,7 @@ export default function HomePage() {
                   alt="Lounge"
                   fill
                   sizes="(max-width: 1120px) 40vw, 520px"
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "cover", objectPosition: "center 55%" }}
                 />
                 <div className="pigCaption">Lounge & fireside</div>
               </div>
@@ -120,7 +124,7 @@ export default function HomePage() {
                     alt="Garden"
                     fill
                     sizes="(max-width: 1120px) 20vw, 260px"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", objectPosition: "center 55%" }}
                   />
                   <div className="pigCaption">Garden</div>
                 </div>
@@ -131,7 +135,7 @@ export default function HomePage() {
                     alt="The house"
                     fill
                     sizes="(max-width: 1120px) 20vw, 260px"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", objectPosition: "center 55%" }}
                   />
                   <div className="pigCaption">The house</div>
                 </div>
@@ -184,7 +188,54 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-{/* THE ROOMS (quiet, not “shopfront”) */}
+
+      {/* TENBY ITINERARY (Pig-style editorial guidance) */}
+      <section className="section">
+        <div className="container">
+          <div style={{ maxWidth: 760 }}>
+            <div className="kicker">Explore Tenby</div>
+            <h2 style={{ fontSize: 34, marginTop: 12 }}>A couple of days, unhurried.</h2>
+            <p style={{ marginTop: 16, opacity: 0.9 }}>
+              Tenby rewards slowing down. A harbour town best explored on foot, with time for sea air,
+              good coffee, and the right table booked for the evening.
+            </p>
+          </div>
+
+          <div style={{ marginTop: 36, display: "grid", gap: 28, gridTemplateColumns: "1fr 1fr" }}>
+            <div>
+              <div className="kicker">Day one</div>
+              <h3 style={{ fontSize: 22, marginTop: 10 }}>Arrive, settle, breathe.</h3>
+              <p style={{ marginTop: 12, opacity: 0.9 }}>
+                After you arrive, leave the car and walk. Head down towards the harbour as the light softens,
+                take in the boats, and stop wherever feels right for a drink.
+              </p>
+              <p style={{ marginTop: 10, opacity: 0.9 }}>
+                We’re always happy to recommend dinner depending on the night — Tenby is small,
+                but the right table makes all the difference.
+              </p>
+            </div>
+
+            <div>
+              <div className="kicker">Day two</div>
+              <h3 style={{ fontSize: 22, marginTop: 10 }}>Morning light and open sand.</h3>
+              <p style={{ marginTop: 12, opacity: 0.9 }}>
+                Start slowly with breakfast, then choose your beach. North Beach for space and breeze,
+                South Beach for shelter and swimming — the tide and wind decide.
+              </p>
+              <p style={{ marginTop: 10, opacity: 0.9 }}>
+                If the weather turns, the coastal path still delivers — even a short walk clears the head.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 28 }}>
+            <Link href="/explore" className="pigGalleryLink">
+              Our favourite walks, beaches, and places to eat
+            </Link>
+          </div>
+        </div>
+      </section>
+      {/* THE ROOMS (quiet, not “shopfront”) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div style={{ display: "grid", gap: 22, gridTemplateColumns: "1fr" }}>
@@ -246,6 +297,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TRUST SIGNAL (quiet, editorial reassurance) */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div style={{ maxWidth: 720 }}>
+            <p style={{ fontSize: 16, opacity: 0.9 }}>
+              Guests consistently rate Broadmead highly for location, breakfast, and comfort.
+            </p>
+            <div style={{ marginTop: 10 }}>
+              <a
+                href="https://www.google.com/search?q=Broadmead+Boutique+B%26B+Tenby+reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pigGalleryLink"
+              >
+                Read recent reviews →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* BOOKING CTA */}
       <section id="book" className="section">
         <div className="container">
@@ -272,6 +343,14 @@ export default function HomePage() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
 
 
 
