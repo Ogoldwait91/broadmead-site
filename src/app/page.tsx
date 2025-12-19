@@ -1,10 +1,10 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
     <div>
-      {/* HERO (full-bleed, proper overlay, readable text) */}
+      {/* HERO */}
       <section className="fullBleed hero heroBleed" style={{ position: "relative", height: "100svh", minHeight: 680 }}>
         <Image
           src="/images/hero.jpg"
@@ -16,7 +16,6 @@ export default function HomePage() {
           style={{ objectFit: "cover", objectPosition: "center 55%" }}
         />
 
-        {/* overlay (Pig-style: dark left, lighter right) */}
         <div
           style={{
             position: "absolute",
@@ -25,14 +24,11 @@ export default function HomePage() {
               "linear-gradient(90deg, rgba(8,18,22,.88) 0%, rgba(8,18,22,.66) 40%, rgba(8,18,22,.32) 74%, rgba(8,18,22,.12) 100%)",
           }}
         />
-
-        {/* subtle coastal tint */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background:
-              "radial-gradient(1200px 520px at 18% 10%, rgba(47,111,115,.28), rgba(47,111,115,0))",
+            background: "radial-gradient(1200px 520px at 18% 10%, rgba(47,111,115,.28), rgba(47,111,115,0))",
             mixBlendMode: "screen",
             opacity: 0.9,
           }}
@@ -42,11 +38,10 @@ export default function HomePage() {
           <div className="container" style={{ paddingBottom: 76 }}>
             <div style={{ maxWidth: 640, color: "white", textShadow: "0 2px 28px rgba(0,0,0,0.55)" }}>
               <div className="kicker" style={{ color: "rgba(255,255,255,.86)" }}>
-                Boutique B&B Tenby Pembrokeshire
+                Boutique B&B · Tenby · Pembrokeshire
               </div>
 
               <h1 className="heroTitle">
-
                 A calm,
                 <br />
                 characterful base
@@ -55,12 +50,12 @@ export default function HomePage() {
               </h1>
 
               <p className="heroCopy">
-                Thoughtful rooms, warm hospitality, and an easy walk to Tenbys beaches, harbour, and restaurants.
+                Thoughtful rooms, warm hospitality — and Tenby’s harbour, beaches and restaurants on foot.
               </p>
 
               <div className="heroCtas">
                 <a className="btn btnSolid" href="#book">Check availability</a>
-                <Link className="btn btnGhost" href="#house">Explore the house</Link>
+                <Link className="btn btnGhost" href="/rooms">View rooms</Link>
               </div>
 
               <div style={{ marginTop: 12, fontSize: 13, color: "rgba(255,255,255,.74)" }}>
@@ -69,30 +64,54 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
         <div className="heroScrollCue" aria-hidden="true">
           <span className="heroScrollLabel">Scroll</span>
           <span className="heroScrollLine" />
         </div>
       </section>
 
-      {/* HOUSE (editorial, not boxy) */}
-      <section id="house" className="section">
-        <div className="container" style={{ display: "grid", gap: 28, gridTemplateColumns: "1fr" }}>
-          <div>
-            <div className="kicker">The house</div>
-            <h2 style={{ fontSize: 34, marginTop: 12 }}>Boutique comfort, unhurried.</h2>
-            <p style={{ marginTop: 18, maxWidth: 520, opacity: 0.9 }}>
-              Broadmead is a calm base with Tenby on the doorstep peaceful to return to, easy to settle into.
+      {/* THE FEELING (short, editorial) */}
+      <section className="section" style={{ paddingBottom: 0 }}>
+        <div className="container">
+          <div style={{ maxWidth: 820 }}>
+            <div className="kicker">The feeling</div>
+            <h2 style={{ fontSize: 34, marginTop: 12 }}>Unhurried, comfortable, quietly confident.</h2>
+            <p style={{ marginTop: 14, opacity: 0.9, maxWidth: 660, lineHeight: 1.7 }}>
+              Broadmead is the kind of place you return to gladly — soft light, good coffee, and a room that feels calm the moment you close the door.
             </p>
+
+            <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 10 }}>
+              {["Best sleep", "Seasonal breakfast", "Walk to the harbour"].map((t) => (
+                <span
+                  key={t}
+                  style={{
+                    border: "1px solid rgba(15,31,38,.16)",
+                    borderRadius: 999,
+                    padding: "8px 12px",
+                    fontSize: 13,
+                    opacity: 0.9,
+                    background: "rgba(246,240,232,.55)",
+                  }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <div style={{ marginTop: 14 }}>
+              <Link href="/about" className="pigGalleryLink">
+                Read our story
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* HOUSE IMAGES (Pig-style: calm, editorial) */}
-      <section className="section" style={{ paddingTop: 10 }}>
+      {/* EDITORIAL IMAGE GRID (keep - it sells the vibe) */}
+      <section className="section" style={{ paddingTop: 28 }}>
         <div className="container">
           <div className="pigGallery" style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(12, minmax(0, 1fr))" }}>
-            {/* big tile */}
             <div className="pigTile" style={{ gridColumn: "span 7", height: 360 }}>
               <Image
                 src="/images/dining.webp"
@@ -104,7 +123,6 @@ export default function HomePage() {
               <div className="pigCaption">Dining room</div>
             </div>
 
-            {/* right column */}
             <div style={{ gridColumn: "span 5", display: "grid", gap: 16 }}>
               <div className="pigTile" style={{ height: 172 }}>
                 <Image
@@ -154,153 +172,53 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* EAT & DRINK (Pig-style: the experience sells) */}
+      {/* TWO JOURNEY CARDS (stay / explore) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ display: "grid", gap: 24, gridTemplateColumns: "1.1fr .9fr", alignItems: "start" }}>
-            <div>
-              <div className="kicker">Eat & drink</div>
-              <h2 style={{ fontSize: 34, marginTop: 12 }}>Breakfast worth getting up for.</h2>
-              <p style={{ marginTop: 16, maxWidth: 660, opacity: 0.9, lineHeight: 1.7 }}>
-                We keep mornings calm: good coffee, local produce, and a dining room that feels light and unhurried.
-                If you’re heading out early for a coastal walk, we’ll help you start well.
-              </p>
-              <ul style={{ marginTop: 14, paddingLeft: 18, opacity: 0.9, lineHeight: 1.9 }}>
-                <li>Seasonal, locally sourced breakfast</li>
-                <li>Dietary requirements welcomed with notice</li>
-                <li>Recommendations for the best dinner in Tenby</li>
-              </ul>
-              <div style={{ marginTop: 16 }}>
-                <Link href="/contact" className="navLink" style={{ color: "var(--text)" }}>
-                  Ask about breakfast, timings, and local recommendations
-                </Link>
+          <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
+            <div className="surface" style={{ overflow: "hidden" }}>
+              <div style={{ position: "relative", height: 220 }}>
+                <Image src="/images/rooms/placeholder.jpg" alt="Rooms" fill sizes="(max-width: 1120px) 100vw, 520px" style={{ objectFit: "cover" }} />
               </div>
-            </div>
-
-            <div className="surface" style={{ padding: 18 }}>
-              <div className="kicker">A note from the house</div>
-              <h3 style={{ fontSize: 20, marginTop: 10 }}>We’ll point you to the best Tenby.</h3>
-              <p style={{ marginTop: 12, fontSize: 14, opacity: 0.9, lineHeight: 1.7 }}>
-                Harbour walks, the right beach for the tide, a table that’s worth booking —
-                we’ll guide you to what’s best on the day.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TENBY ITINERARY (Pig-style editorial guidance) */}
-      <section className="section">
-        <div className="container">
-          <div style={{ maxWidth: 760 }}>
-            <div className="kicker">Explore Tenby</div>
-            <h2 style={{ fontSize: 34, marginTop: 12 }}>A couple of days, unhurried.</h2>
-            <p style={{ marginTop: 16, opacity: 0.9 }}>
-              Tenby rewards slowing down. A harbour town best explored on foot, with time for sea air,
-              good coffee, and the right table booked for the evening.
-            </p>
-          </div>
-
-          <div style={{ marginTop: 36, display: "grid", gap: 28, gridTemplateColumns: "1fr 1fr" }}>
-            <div>
-              <div className="kicker">Day one</div>
-              <h3 style={{ fontSize: 22, marginTop: 10 }}>Arrive, settle, breathe.</h3>
-              <p style={{ marginTop: 12, opacity: 0.9 }}>
-                After you arrive, leave the car and walk. Head down towards the harbour as the light softens,
-                take in the boats, and stop wherever feels right for a drink.
-              </p>
-              <p style={{ marginTop: 10, opacity: 0.9 }}>
-                We’re always happy to recommend dinner depending on the night — Tenby is small,
-                but the right table makes all the difference.
-              </p>
-            </div>
-
-            <div>
-              <div className="kicker">Day two</div>
-              <h3 style={{ fontSize: 22, marginTop: 10 }}>Morning light and open sand.</h3>
-              <p style={{ marginTop: 12, opacity: 0.9 }}>
-                Start slowly with breakfast, then choose your beach. North Beach for space and breeze,
-                South Beach for shelter and swimming — the tide and wind decide.
-              </p>
-              <p style={{ marginTop: 10, opacity: 0.9 }}>
-                If the weather turns, the coastal path still delivers — even a short walk clears the head.
-              </p>
-            </div>
-          </div>
-
-          <div style={{ marginTop: 28 }}>
-            <Link href="/explore" className="pigGalleryLink">
-              Our favourite walks, beaches, and places to eat
-            </Link>
-          </div>
-        </div>
-      </section>
-      {/* THE ROOMS (quiet, not “shopfront”) */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div style={{ display: "grid", gap: 22, gridTemplateColumns: "1fr" }}>
-            <div>
-              <div className="kicker">The rooms</div>
-              <h2 style={{ fontSize: 30, marginTop: 12 }}>Thoughtful, quiet, and made for sleep.</h2>
-              <p style={{ marginTop: 14, maxWidth: 700, opacity: 0.9 }}>
-                We’ve kept the rooms calm and comfortable — good linens, space to unpack, and the kind of quiet you only notice when it’s there.
-              </p>
-              <div style={{ marginTop: 14 }}>
-                <Link href="/rooms" className="pigGalleryLink">
-                  View rooms & details
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* EXPLORE TENBY (curated, confident, local) */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 16 }}>
-            <div>
-              <div className="kicker">Explore</div>
-              <h2 style={{ fontSize: 30, marginTop: 12 }}>Tenby, at an unhurried pace.</h2>
-              <p style={{ marginTop: 10, maxWidth: 860, opacity: 0.9 }}>
-                A few favourites to help you plan a perfect couple of days — beaches, harbour walks, and places we genuinely recommend.
-              </p>
-            </div>
-            <Link href="/explore" className="pigGalleryLink">All recommendations</Link>
-          </div>
-
-          <div
-            style={{
-              marginTop: 18,
-              display: "grid",
-              gap: 16,
-              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-            }}
-          >
-            {[
-              { title: "Harbour walk", note: "Early light, boats, coffee — the best start to the day." },
-              { title: "North Beach", note: "Wide sand, sea air, and a proper reset." },
-              { title: "Dinner in town", note: "We’ll point you to the best table depending on the night." },
-            ].map((c) => (
-              <div key={c.title} className="surface" style={{ padding: 18 }}>
-                <div className="kicker">Tenby</div>
-                <h3 style={{ fontSize: 18, marginTop: 10 }}>{c.title}</h3>
-                <p style={{ marginTop: 10, fontSize: 14, opacity: 0.9 }}>{c.note}</p>
+              <div style={{ padding: 18 }}>
+                <div className="kicker">Stay</div>
+                <h3 style={{ fontSize: 20, marginTop: 10 }}>Rooms made for sleep.</h3>
+                <p style={{ marginTop: 10, fontSize: 14, opacity: 0.9 }}>
+                  Calm interiors, good linens, and the quiet you only notice when it’s there.
+                </p>
                 <div style={{ marginTop: 12 }}>
-                  <Link href="/explore" className="pigGalleryLink">
-                    See details
-                  </Link>
+                  <Link href="/rooms" className="pigGalleryLink">View rooms</Link>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="surface" style={{ overflow: "hidden" }}>
+              <div style={{ position: "relative", height: 220 }}>
+                <Image src="/images/explore/placeholder.jpg" alt="Explore Tenby" fill sizes="(max-width: 1120px) 100vw, 520px" style={{ objectFit: "cover" }} />
+              </div>
+              <div style={{ padding: 18 }}>
+                <div className="kicker">Explore</div>
+                <h3 style={{ fontSize: 20, marginTop: 10 }}>Tenby, at an unhurried pace.</h3>
+                <p style={{ marginTop: 10, fontSize: 14, opacity: 0.9 }}>
+                  Harbour walks, the right beach for the tide, and the best table for the night.
+                </p>
+                <div style={{ marginTop: 12 }}>
+                  <Link href="/explore" className="pigGalleryLink">Our recommendations</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 12, fontSize: 13, opacity: 0.75 }}>
+            Tip: replace the two placeholder images with your best “room” and “Tenby” shots.
           </div>
         </div>
       </section>
 
-      {/* TRUST SIGNAL (quiet, editorial reassurance) */}
+      {/* TRUST (single line, quiet) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ maxWidth: 720 }}>
+          <div style={{ maxWidth: 760 }}>
             <p style={{ fontSize: 16, opacity: 0.9 }}>
               Guests consistently rate Broadmead highly for location, breakfast, and comfort.
             </p>
@@ -317,6 +235,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       {/* BOOKING CTA */}
       <section id="book" className="section">
         <div className="container">
@@ -333,7 +252,7 @@ export default function HomePage() {
 
           <div style={{ paddingTop: 28, fontSize: 13, color: "rgba(15,31,38,0.55)" }}>
             <div style={{ maxWidth: 520 }}>
-              Broadmead Boutique B&B Tenby, Pembrokeshire
+              Broadmead Boutique B&B · Tenby, Pembrokeshire
               <br />
               A calm, characterful base for the coast.
             </div>
@@ -343,22 +262,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,53 +1,34 @@
 ﻿import Link from "next/link";
 
-const nav = [
+const links = [
   { href: "/rooms", label: "Rooms" },
-  { href: "/gallery", label: "Gallery" },
   { href: "/explore", label: "Explore" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/faq", label: "FAQs" },
+  { href: "/about", label: "Our Story" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function SiteHeader() {
   return (
-    <header
-      className="sticky top-0 z-50 border-b"
-      style={{
-        borderColor: "var(--line)",
-        background: "rgba(246,248,247,0.80)",
-        backdropFilter: "blur(10px)",
-      }}
-    >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-baseline gap-2 no-underline">
-          <span className="text-[15px] font-semibold tracking-tight">Broadmead</span>
-          <span className="text-[13px]" style={{ color: "var(--muted)" }}>
-            Tenby
-          </span>
+    <header style={{ borderBottom: "1px solid rgba(15,31,38,.10)", background: "rgba(246,240,232,.65)" }}>
+      <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0" }}>
+        <Link href="/" style={{ fontWeight: 700, letterSpacing: ".02em" }}>
+          Broadmead
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-[13px] font-medium no-underline hover:opacity-80"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Link href="/#book" className="btn btn-primary" style={{ padding: "0.6rem 1rem" }}>
-            Book Direct
-          </Link>
+        <nav aria-label="Primary">
+          <ul style={{ display: "flex", gap: 14, listStyle: "none", padding: 0, margin: 0, flexWrap: "wrap", justifyContent: "flex-end" }}>
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} style={{ fontSize: 14, opacity: 0.9 }}>
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </nav>
-
-        <div className="md:hidden">
-          <Link href="/#book" className="btn btn-primary" style={{ padding: "0.55rem 0.9rem" }}>
-            Book
-          </Link>
-        </div>
       </div>
     </header>
   );
 }
-

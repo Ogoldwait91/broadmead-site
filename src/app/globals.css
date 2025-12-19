@@ -833,3 +833,78 @@ p + p{
 .kicker{
   margin-bottom: 6px;
 }
+
+/* ---------- Brand tokens & polish ---------- */
+:root{
+  --ink:#0f1f26;
+  --cream:#f6f0e8;
+  --sand:#e9dfd0;
+  --muted: rgba(15,31,38,.78);
+  --hair: rgba(15,31,38,.14);
+  --shadow: 0 14px 40px rgba(15,31,38,.10);
+  --radius: 10px;
+}
+
+a, button { transition: transform .15s ease, opacity .15s ease, background-color .15s ease, color .15s ease; }
+a:hover { opacity: .92; }
+button:active, a:active { transform: translateY(1px); }
+
+:focus-visible{
+  outline: 2px solid rgba(15,31,38,.55);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.surface{
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(15,31,38,.08);
+}
+
+.kicker{
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: .75;
+}
+
+/* Better readable paragraphs */
+.prose p{ line-height: 1.65; color: var(--muted); }
+.prose p + p{ margin-top: 12px; }
+
+/* Light editorial divider */
+.hr{
+  height: 1px;
+  background: var(--hair);
+  width: 100%;
+}
+
+/* Sticky booking bar (optional use) */
+.bookingBar{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(10px);
+  background: rgba(246,240,232,.92);
+  border-bottom: 1px solid rgba(15,31,38,.10);
+}
+
+/* --- HERO: fit to viewport minus header/topbar --- */
+:root{
+  --chrome-h: 104px; /* adjust if your topbar/header height changes */
+}
+
+@media (max-width: 768px){
+  :root{ --chrome-h: 122px; } /* mobile nav tends to be taller */
+}
+
+/* Apply to your hero section */
+.heroBleed{
+  height: calc(100svh - var(--chrome-h));
+  min-height: 620px;
+}
+
+/* Ensure anchor targets aren't hidden under sticky header */
+#house, #book{
+  scroll-margin-top: calc(var(--chrome-h) + 16px);
+}
