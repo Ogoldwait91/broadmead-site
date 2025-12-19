@@ -1,11 +1,19 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 
+/**
+ * The homepage introduces Broadmead in the simplest possible way:
+ * a concise hero, a sense of feeling, a glimpse of the house itself
+ * and curated insight into Tenby. Each section stays calm and invitational.
+ */
 export default function HomePage() {
   return (
     <div>
       {/* HERO */}
-      <section className="fullBleed hero heroBleed" style={{ position: "relative", height: "100svh", minHeight: 680 }}>
+      <section
+        className="fullBleed hero heroBleed"
+        style={{ position: "relative" }}
+      >
         <Image
           src="/images/hero.jpg"
           alt="Broadmead Boutique B&B exterior"
@@ -16,87 +24,125 @@ export default function HomePage() {
           style={{ objectFit: "cover", objectPosition: "center 55%" }}
         />
 
+        {/* Gradient overlays remain defined in globals.css via the .hero class */}
+
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background:
-              "linear-gradient(90deg, rgba(8,18,22,.88) 0%, rgba(8,18,22,.66) 40%, rgba(8,18,22,.32) 74%, rgba(8,18,22,.12) 100%)",
+            display: "grid",
+            alignItems: "center",
           }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(1200px 520px at 18% 10%, rgba(47,111,115,.28), rgba(47,111,115,0))",
-            mixBlendMode: "screen",
-            opacity: 0.9,
-          }}
-        />
+        >
+          <div className="container" style={{ paddingTop: 72, paddingBottom: 48 }}>
+            <div
+              style={{
+                maxWidth: 640, margin: "0 auto", textAlign: "center",
+                color: "white",
+                textShadow: "0 2px 28px rgba(0,0,0,0.55)",
+              }}
+            >
+<h1 className="heroTitle">The Broadmead<br/>in Tenby.</h1>
 
-        <div style={{ position: "absolute", inset: 0, display: "grid", alignItems: "end" }}>
-          <div className="container" style={{ paddingBottom: 76 }}>
-            <div style={{ maxWidth: 640, color: "white", textShadow: "0 2px 28px rgba(0,0,0,0.55)" }}>
-              <div className="kicker" style={{ color: "rgba(255,255,255,.86)" }}>
-                Boutique B&B · Tenby · Pembrokeshire
+              {/* A single line of copy conveys the feeling without overselling */}
+{/* Primary call‑to‑action only */}
+              <div className="heroCtas" style={{ display: "flex", justifyContent: "center", marginTop: 14 }}>
+                <a className="btn btnSolid" href="#book" style={{ background: "rgba(15,53,64,0.92)", border: "1px solid rgba(255,255,255,0.22)", boxShadow: "0 12px 26px rgba(0,0,0,0.25)" }}>Check availability</a>
               </div>
 
-              <h1 className="heroTitle">
-                A calm,
-                <br />
-                characterful base
-                <br />
-                for the coast.
-              </h1>
-
-              <p className="heroCopy">
-                Thoughtful rooms, warm hospitality — and Tenby’s harbour, beaches and restaurants on foot.
-              </p>
-
-              <div className="heroCtas">
-                <a className="btn btnSolid" href="#book">Check availability</a>
-                <Link className="btn btnGhost" href="/rooms">View rooms</Link>
-              </div>
-
-              <div style={{ marginTop: 12, fontSize: 13, color: "rgba(255,255,255,.74)" }}>
-                Book direct for best value and the simplest experience.
-              </div>
-            </div>
+              {/* Quiet reassurance about booking direct */}
+</div>
           </div>
         </div>
 
-        <div className="heroScrollCue" aria-hidden="true">
-          <span className="heroScrollLabel">Scroll</span>
-          <span className="heroScrollLine" />
+        
+        <div
+          className="heroScrollCue"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 28,
+            transform: "translateX(-50%)",
+            display: "grid",
+            gap: 10,
+            placeItems: "center",
+            opacity: 0.95,
+            color: "rgba(255,255,255,0.9)",
+            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
+            pointerEvents: "none",
+          }}
+        >
+          <span
+            className="heroScrollLabel"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              opacity: 0.85,
+            }}
+          >
+            SCROLL
+          </span>
+          <span
+            className="heroScrollLine"
+            style={{
+              width: 1,
+              height: 44,
+              background: "rgba(255,255,255,0.85)",
+              borderRadius: 999,
+            }}
+          />
+        </div>
+</section>
+
+      {/* WATERMARK EDITORIAL SECTION */}
+      <section className="section watermarkSection">
+        <div className="container watermarkInner">
+          <div className="kicker">A house for unhurried stays</div>
+          <h2>Quiet, design-led, and close to the sea.</h2>
+          <p>
+            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Nothing loud. Everything considered.
+          </p>
         </div>
       </section>
-
-      {/* THE FEELING (short, editorial) */}
+{/* THE FEELING (short, editorial) */}
       <section className="section" style={{ paddingBottom: 0 }}>
         <div className="container">
-          <div style={{ maxWidth: 820 }}>
-            <div className="kicker">The feeling</div>
-            <h2 style={{ fontSize: 34, marginTop: 12 }}>Unhurried, comfortable, quietly confident.</h2>
-            <p style={{ marginTop: 14, opacity: 0.9, maxWidth: 660, lineHeight: 1.7 }}>
-              Broadmead is the kind of place you return to gladly — soft light, good coffee, and a room that feels calm the moment you close the door.
+          <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
+<h2 style={{ fontSize: 34, marginTop: 12 }}>
+              Unhurried, comfortable, quietly confident.
+            </h2>
+            <p
+              style={{
+                marginTop: 14,
+                opacity: 0.9,
+                maxWidth: 660,
+                lineHeight: 1.7,
+              }}
+            >
+              Soft light, good coffee and a calm room that instantly feels like
+              yours.
             </p>
 
             <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 10 }}>
-              {["Best sleep", "Seasonal breakfast", "Walk to the harbour"].map((t) => (
-                <span
-                  key={t}
-                  style={{
-                    border: "1px solid rgba(15,31,38,.16)",
-                    borderRadius: 999,
-                    padding: "8px 12px",
-                    fontSize: 13,
-                    opacity: 0.9,
-                    background: "rgba(246,240,232,.55)",
-                  }}
-                >
-                  {t}
-                </span>
-              ))}
+              {["Best sleep", "Seasonal breakfast", "Walk to the harbour"].map(
+                (t) => (
+                  <span
+                    key={t}
+                    style={{
+                      border: "1px solid rgba(15,31,38,.16)",
+                      borderRadius: 999,
+                      padding: "8px 12px",
+                      fontSize: 13,
+                      opacity: 0.9,
+                      background: "rgba(246,240,232,.55)",
+                    }}
+                  >
+                    {t}
+                  </span>
+                )
+              )}
             </div>
 
             <div style={{ marginTop: 14 }}>
@@ -106,12 +152,63 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+              <div
+          className="heroScrollCue"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 28,
+            transform: "translateX(-50%)",
+            display: "grid",
+            gap: 10,
+            placeItems: "center",
+            opacity: 0.95,
+            color: "rgba(255,255,255,0.9)",
+            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
+            pointerEvents: "none",
+          }}
+        >
+          <span
+            className="heroScrollLabel"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              opacity: 0.85,
+            }}
+          >
+            SCROLL
+          </span>
+          <span
+            className="heroScrollLine"
+            style={{
+              width: 1,
+              height: 44,
+              background: "rgba(255,255,255,0.85)",
+              borderRadius: 999,
+            }}
+          />
+        </div>
+</section>
 
-      {/* EDITORIAL IMAGE GRID (keep - it sells the vibe) */}
+      {/* WATERMARK EDITORIAL SECTION */}
+      <section className="section watermarkSection">
+        <div className="container watermarkInner">
+          <div className="kicker">A house for unhurried stays</div>
+          <h2>Quiet, design-led, and close to the sea.</h2>
+          <p>
+            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Nothing loud. Everything considered.
+          </p>
+        </div>
+      </section>
+{/* EDITORIAL IMAGE GRID (kept to sell the vibe) */}
       <section className="section" style={{ paddingTop: 28 }}>
         <div className="container">
-          <div className="pigGallery" style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(12, minmax(0, 1fr))" }}>
+          <div
+            className="pigGallery"
+            style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(12, minmax(0, 1fr))" }}
+          >
             <div className="pigTile" style={{ gridColumn: "span 7", height: 360 }}>
               <Image
                 src="/images/dining.webp"
@@ -135,7 +232,9 @@ export default function HomePage() {
                 <div className="pigCaption">Lounge & fireside</div>
               </div>
 
-              <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
+              <div
+                style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}
+              >
                 <div className="pigTile" style={{ height: 172 }}>
                   <Image
                     src="/images/garden.webp"
@@ -170,40 +269,235 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+              <div
+          className="heroScrollCue"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 28,
+            transform: "translateX(-50%)",
+            display: "grid",
+            gap: 10,
+            placeItems: "center",
+            opacity: 0.95,
+            color: "rgba(255,255,255,0.9)",
+            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
+            pointerEvents: "none",
+          }}
+        >
+          <span
+            className="heroScrollLabel"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              opacity: 0.85,
+            }}
+          >
+            SCROLL
+          </span>
+          <span
+            className="heroScrollLine"
+            style={{
+              width: 1,
+              height: 44,
+              background: "rgba(255,255,255,0.85)",
+              borderRadius: 999,
+            }}
+          />
+        </div>
+</section>
 
-      {/* TWO JOURNEY CARDS (stay / explore) */}
+      {/* WATERMARK EDITORIAL SECTION */}
+      <section className="section watermarkSection">
+        <div className="container watermarkInner">
+          <div className="kicker">A house for unhurried stays</div>
+          <h2>Quiet, design-led, and close to the sea.</h2>
+          <p>
+            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Nothing loud. Everything considered.
+          </p>
+        </div>
+      </section>
+{/* HOUSE NARRATIVE – evokes the feeling of living here */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
+          <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
+<h2 style={{ fontSize: 32, marginTop: 12 }}>A place to exhale.</h2>
+            <p style={{ marginTop: 12, maxWidth: 720, opacity: 0.9 }}>
+              Broadmead feels less like a hotel and more like the house you wish you owned —
+              quiet, gentle and designed for lingering.
+            </p>
+            <p style={{ marginTop: 10, maxWidth: 720, opacity: 0.9 }}>
+              Arrive, drop your shoulders and let the day unfold at your own pace.
+            </p>
+            <div style={{ marginTop: 12 }}>
+              <Link href="/about" className="pigGalleryLink">Learn more about the house</Link>
+            </div>
+          </div>
+        </div>
+              <div
+          className="heroScrollCue"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 28,
+            transform: "translateX(-50%)",
+            display: "grid",
+            gap: 10,
+            placeItems: "center",
+            opacity: 0.95,
+            color: "rgba(255,255,255,0.9)",
+            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
+            pointerEvents: "none",
+          }}
+        >
+          <span
+            className="heroScrollLabel"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              opacity: 0.85,
+            }}
+          >
+            SCROLL
+          </span>
+          <span
+            className="heroScrollLine"
+            style={{
+              width: 1,
+              height: 44,
+              background: "rgba(255,255,255,0.85)",
+              borderRadius: 999,
+            }}
+          />
+        </div>
+</section>
+
+      {/* WATERMARK EDITORIAL SECTION */}
+      <section className="section watermarkSection">
+        <div className="container watermarkInner">
+          <div className="kicker">A house for unhurried stays</div>
+          <h2>Quiet, design-led, and close to the sea.</h2>
+          <p>
+            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Nothing loud. Everything considered.
+          </p>
+        </div>
+      </section>
+{/* CURATED TENBY – a taste of what’s beyond the door */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
+<h2 style={{ fontSize: 32, marginTop: 12 }}>Our favourite Tenby moments.</h2>
+            <p style={{ marginTop: 12, maxWidth: 720, opacity: 0.9 }}>
+              Whether it&apos;s the right beach for the wind, a harbour walk at dusk or the table you can&apos;t miss,
+              we curate a few local favourites just for you.
+            </p>
+            <div style={{ marginTop: 12 }}>
+              <Link href="/explore" className="pigGalleryLink">See our Tenby recommendations</Link>
+            </div>
+          </div>
+        </div>
+              <div
+          className="heroScrollCue"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 28,
+            transform: "translateX(-50%)",
+            display: "grid",
+            gap: 10,
+            placeItems: "center",
+            opacity: 0.95,
+            color: "rgba(255,255,255,0.9)",
+            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
+            pointerEvents: "none",
+          }}
+        >
+          <span
+            className="heroScrollLabel"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              opacity: 0.85,
+            }}
+          >
+            SCROLL
+          </span>
+          <span
+            className="heroScrollLine"
+            style={{
+              width: 1,
+              height: 44,
+              background: "rgba(255,255,255,0.85)",
+              borderRadius: 999,
+            }}
+          />
+        </div>
+</section>
+
+      {/* WATERMARK EDITORIAL SECTION */}
+      <section className="section watermarkSection">
+        <div className="container watermarkInner">
+          <div className="kicker">A house for unhurried stays</div>
+          <h2>Quiet, design-led, and close to the sea.</h2>
+          <p>
+            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Nothing loud. Everything considered.
+          </p>
+        </div>
+      </section>
+{/* TWO JOURNEY CARDS (stay / explore) */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div
+            style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}
+          >
             <div className="surface" style={{ overflow: "hidden" }}>
-              <div style={{ position: "relative", height: 220 }}>
-                <Image src="/images/rooms/placeholder.jpg" alt="Rooms" fill sizes="(max-width: 1120px) 100vw, 520px" style={{ objectFit: "cover" }} />
+              <div style={{ position: "relative" }}>
+                <Image
+                  src="/images/rooms/placeholder.jpg"
+                  alt="Rooms"
+                  fill
+                  sizes="(max-width: 1120px) 100vw, 520px"
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <div style={{ padding: 18 }}>
-                <div className="kicker">Stay</div>
-                <h3 style={{ fontSize: 20, marginTop: 10 }}>Rooms made for sleep.</h3>
+<h3 style={{ fontSize: 20, marginTop: 10 }}>Rooms made for sleep.</h3>
                 <p style={{ marginTop: 10, fontSize: 14, opacity: 0.9 }}>
-                  Calm interiors, good linens, and the quiet you only notice when it’s there.
+                  Calm interiors and quiet nights.
                 </p>
                 <div style={{ marginTop: 12 }}>
-                  <Link href="/rooms" className="pigGalleryLink">View rooms</Link>
+                  <Link href="/rooms" className="pigGalleryLink">
+                    View rooms
+                  </Link>
                 </div>
               </div>
             </div>
 
             <div className="surface" style={{ overflow: "hidden" }}>
-              <div style={{ position: "relative", height: 220 }}>
-                <Image src="/images/explore/placeholder.jpg" alt="Explore Tenby" fill sizes="(max-width: 1120px) 100vw, 520px" style={{ objectFit: "cover" }} />
+              <div style={{ position: "relative" }}>
+                <Image
+                  src="/images/explore/placeholder.jpg"
+                  alt="Explore Tenby"
+                  fill
+                  sizes="(max-width: 1120px) 100vw, 520px"
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <div style={{ padding: 18 }}>
-                <div className="kicker">Explore</div>
-                <h3 style={{ fontSize: 20, marginTop: 10 }}>Tenby, at an unhurried pace.</h3>
+<h3 style={{ fontSize: 20, marginTop: 10 }}>Tenby, at an unhurried pace.</h3>
                 <p style={{ marginTop: 10, fontSize: 14, opacity: 0.9 }}>
-                  Harbour walks, the right beach for the tide, and the best table for the night.
+                  Harbour walks, the right beach for the tide and the best tables.
                 </p>
                 <div style={{ marginTop: 12 }}>
-                  <Link href="/explore" className="pigGalleryLink">Our recommendations</Link>
+                  <Link href="/explore" className="pigGalleryLink">
+                    Our recommendations
+                  </Link>
                 </div>
               </div>
             </div>
@@ -213,14 +507,63 @@ export default function HomePage() {
             Tip: replace the two placeholder images with your best “room” and “Tenby” shots.
           </div>
         </div>
-      </section>
+              <div
+          className="heroScrollCue"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 28,
+            transform: "translateX(-50%)",
+            display: "grid",
+            gap: 10,
+            placeItems: "center",
+            opacity: 0.95,
+            color: "rgba(255,255,255,0.9)",
+            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
+            pointerEvents: "none",
+          }}
+        >
+          <span
+            className="heroScrollLabel"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              opacity: 0.85,
+            }}
+          >
+            SCROLL
+          </span>
+          <span
+            className="heroScrollLine"
+            style={{
+              width: 1,
+              height: 44,
+              background: "rgba(255,255,255,0.85)",
+              borderRadius: 999,
+            }}
+          />
+        </div>
+</section>
 
-      {/* TRUST (single line, quiet) */}
+      {/* WATERMARK EDITORIAL SECTION */}
+      <section className="section watermarkSection">
+        <div className="container watermarkInner">
+          <div className="kicker">A house for unhurried stays</div>
+          <h2>Quiet, design-led, and close to the sea.</h2>
+          <p>
+            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Nothing loud. Everything considered.
+          </p>
+        </div>
+      </section>
+{/* TRUST (single line, quiet) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ maxWidth: 760 }}>
+          <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
+            {/* Use a short review quote instead of generic wording */}
             <p style={{ fontSize: 16, opacity: 0.9 }}>
-              Guests consistently rate Broadmead highly for location, breakfast, and comfort.
+              “The perfect base for exploring Tenby — calm rooms, thoughtful hosts.”
             </p>
             <div style={{ marginTop: 10 }}>
               <a
@@ -234,31 +577,152 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+              <div
+          className="heroScrollCue"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 28,
+            transform: "translateX(-50%)",
+            display: "grid",
+            gap: 10,
+            placeItems: "center",
+            opacity: 0.95,
+            color: "rgba(255,255,255,0.9)",
+            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
+            pointerEvents: "none",
+          }}
+        >
+          <span
+            className="heroScrollLabel"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              opacity: 0.85,
+            }}
+          >
+            SCROLL
+          </span>
+          <span
+            className="heroScrollLine"
+            style={{
+              width: 1,
+              height: 44,
+              background: "rgba(255,255,255,0.85)",
+              borderRadius: 999,
+            }}
+          />
+        </div>
+</section>
 
-      {/* BOOKING CTA */}
+      {/* WATERMARK EDITORIAL SECTION */}
+      <section className="section watermarkSection">
+        <div className="container watermarkInner">
+          <div className="kicker">A house for unhurried stays</div>
+          <h2>Quiet, design-led, and close to the sea.</h2>
+          <p>
+            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Nothing loud. Everything considered.
+          </p>
+        </div>
+      </section>
+{/* BOOKING CTA */}
       <section id="book" className="section">
         <div className="container">
           <div className="surface" style={{ padding: 22 }}>
-            <div className="kicker">Book direct</div>
-            <h2 style={{ fontSize: 28, marginTop: 12 }}>Availability & rates.</h2>
+<h2 style={{ fontSize: 28, marginTop: 12 }}>Availability & rates.</h2>
             <p style={{ marginTop: 10, maxWidth: 860 }}>
               Quick link to your live booking page. We can embed the booking widget later.
             </p>
             <div style={{ marginTop: 16 }}>
-              <a className="btn btnSolid" href="https://broadmeadtenby.wales/availability-tariff">Availability & Rates</a>
+              <a
+                className="btn btnSolid"
+                href="https://broadmeadtenby.wales/availability-tariff"
+              >
+                Availability & Rates
+              </a>
             </div>
           </div>
 
-          <div style={{ paddingTop: 28, fontSize: 13, color: "rgba(15,31,38,0.55)" }}>
-            <div style={{ maxWidth: 520 }}>
+          <div
+            style={{ paddingTop: 28, fontSize: 13, color: "rgba(15,31,38,0.55)" }}
+          >
+            <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
               Broadmead Boutique B&B · Tenby, Pembrokeshire
               <br />
               A calm, characterful base for the coast.
             </div>
           </div>
         </div>
+              <div
+          className="heroScrollCue"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 28,
+            transform: "translateX(-50%)",
+            display: "grid",
+            gap: 10,
+            placeItems: "center",
+            opacity: 0.95,
+            color: "rgba(255,255,255,0.9)",
+            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
+            pointerEvents: "none",
+          }}
+        >
+          <span
+            className="heroScrollLabel"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              opacity: 0.85,
+            }}
+          >
+            SCROLL
+          </span>
+          <span
+            className="heroScrollLine"
+            style={{
+              width: 1,
+              height: 44,
+              background: "rgba(255,255,255,0.85)",
+              borderRadius: 999,
+            }}
+          />
+        </div>
+</section>
+
+      {/* WATERMARK EDITORIAL SECTION */}
+      <section className="section watermarkSection">
+        <div className="container watermarkInner">
+          <div className="kicker">A house for unhurried stays</div>
+          <h2>Quiet, design-led, and close to the sea.</h2>
+          <p>
+            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Nothing loud. Everything considered.
+          </p>
+        </div>
       </section>
-    </div>
+</div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

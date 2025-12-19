@@ -1,25 +1,19 @@
 ﻿"use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function TopBar() {
   const nav = [
-    { href: "/rooms",   label: "Rooms" },
+    { href: "/rooms", label: "Rooms" },
     { href: "/gallery", label: "Gallery" },
     { href: "/explore", label: "Explore" },
-    { href: "/faq",     label: "FAQs" },
+    { href: "/faq", label: "FAQs" },
     { href: "/contact", label: "Contact" },
   ];
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onResize = () => {
@@ -29,87 +23,75 @@ export default function TopBar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Dark tint at all times; slightly lighter when scrolled
-  const bgColor   = scrolled ? "rgba(15,53,64,0.90)" : "rgba(15,53,64,0.85)";
-  const txtColor  = "#ffffff";
-  const borderCol = scrolled ? "rgba(255,255,255,0.20)" : "rgba(255,255,255,0.15)";
-
   return (
-    <header
-      className="fixed top-0 left-1/2 -translate-x-1/2 w-screen z-50" // changed from sticky to fixed
-      style={{
-        background: bgColor,
-        color: txtColor,
-        backdropFilter: "blur(14px)",
-        WebkitBackdropFilter: "blur(14px)",
-        borderBottom: `1px solid ${borderCol}`,
-      }}
-    >
-      <div className="announcement">
-        <span>Spring escapes: garden‑to‑table breakfasts & countryside walks.</span>
-        <Link href="#offers" className="underline underline-offset-4 hover:opacity-90">
-          View offers
+    <header className="topHeader fixed top-0 left-0 w-full z-50">
+      <div className="topHeaderInner">
+        <Link href="/" className="brandLogo" aria-label="Broadmead Boutique B&B home">
+          <Image
+            src="/images/broadmead-tenby-logo.png"
+            alt="Broadmead Boutique B&B"
+            width={220}
+            height={60}
+            priority
+          />
         </Link>
-      </div>
-      <div className="topbarInner">
-        <Link href="/" className="brand">
-          <span className="brandMark">Broadmead</span>
-          <span className="brandSub">Boutique B&B</span>
-        </Link>
-        <nav className="nav hidden lg:flex">
+
+        {/* Desktop nav */}
+        <nav className="topNav hidden lg:flex" aria-label="Primary">
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="navLink">
+            <Link key={item.href} href={item.href} className="topNavLink">
               {item.label}
             </Link>
           ))}
-          <Link href="#book" className="btn btnSolid">
-            Check availability
-          </Link>
         </nav>
+
+        {/* Mobile toggle */}
         <button
           type="button"
           aria-label="Toggle menu"
           aria-expanded={open}
-          className="mobile-btn lg:hidden"
+          className="lg:hidden"
           onClick={() => setOpen(!open)}
+          style={{
+            height: 44,
+            width: 44,
+            borderRadius: 999,
+            border: "1px solid rgba(255,255,255,0.18)",
+            background: "rgba(255,255,255,0.06)",
+            color: "rgba(255,255,255,0.92)",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          <span className="sr-only">Menu</span>
-          <div className="flex flex-col gap-1">
-            <span
-              className={`h-[2px] w-5 bg-current transition ${open ? "translate-y-[3px] rotate-45" : ""}`}
-            />
-            <span
-              className={`h-[2px] w-5 bg-current transition ${open ? "opacity-0" : ""}`}
-            />
-            <span
-              className={`h-[2px] w-5 bg-current transition ${open ? "-translate-y-[5px] -rotate-45" : ""}`}
-            />
-          </div>
+          <span style={{ fontSize: 18, lineHeight: 1 }}>☰</span>
         </button>
       </div>
-      <div className={`${open ? "block" : "hidden"} lg:hidden`}>
-        <div className="mobile-menu">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="navLink block py-3 px-3"
-              onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Link
-            href="#book"
-            className="btn btnSolid block mt-3"
-            onClick={() => setOpen(false)}
-          >
-            Check availability
-          </Link>
+
+      {/* Mobile menu */}
+      {open ? (
+        <div
+          className="lg:hidden"
+          style={{
+            borderTop: "1px solid rgba(255,255,255,0.12)",
+            background: "rgba(15,53,64,0.98)",
+          }}
+        >
+          <div style={{ maxWidth: 1200, margin: "0 auto", padding: "10px 24px 16px" }}>
+            {nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="topNavLink"
+                onClick={() => setOpen(false)}
+                style={{ display: "block", padding: "10px 0" }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      ) : null}
     </header>
   );
 }
-
-

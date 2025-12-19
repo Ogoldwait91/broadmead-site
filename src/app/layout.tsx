@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import { Libre_Baskerville, Inter } from "next/font/google";
 import TopBar from "../components/TopBar";
-import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
 const serif = Libre_Baskerville({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-serif", display: "swap" });
@@ -47,10 +46,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <HotelJsonLd />
         <TopBar />
-        <SiteHeader />
         {children}
         <SiteFooter />
       </body>
     </html>
   );
 }
+
+

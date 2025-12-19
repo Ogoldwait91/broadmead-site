@@ -10,7 +10,7 @@ export default function ExplorePage() {
             <div className="kicker">Explore Tenby</div>
             <h1 style={{ fontSize: 32, marginTop: 12 }}>Tenby, at an unhurried pace.</h1>
             <p style={{ marginTop: 10, maxWidth: 800, opacity: 0.9 }}>
-              A few favourites to help you plan a perfect couple of days — beaches, harbour walks and places we genuinely recommend.
+              A few of our favourite beaches, walks and places to eat — curated to help you savour your time here.
             </p>
           </div>
           <div style={{ display: "grid", gap: 20, gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>

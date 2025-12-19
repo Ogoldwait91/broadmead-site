@@ -10,7 +10,7 @@ export default function RoomsPage() {
             <div className="kicker">The rooms</div>
             <h1 style={{ fontSize: 32, marginTop: 12 }}>Thoughtful, quiet, and made for sleep.</h1>
             <p style={{ marginTop: 12, maxWidth: 680, opacity: 0.9 }}>
-              Choose between our individually styled rooms. Each has comfortable beds, soft linens and a calm palette.
+              Individually styled rooms with soft linens and a calm palette for unbroken rest.
             </p>
           </div>
           <div style={{ display: "grid", gap: 24, gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
