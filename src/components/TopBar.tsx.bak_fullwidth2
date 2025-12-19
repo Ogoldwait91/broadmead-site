@@ -36,7 +36,7 @@ export default function TopBar() {
 
   return (
     <header
-      className="fixed top-0 left-1/2 -translate-x-1/2 w-screen z-50" // changed from sticky to fixed
+      className="fixed top-0 left-0 right-0 z-50" // changed from sticky to fixed
       style={{
         background: bgColor,
         color: txtColor,
@@ -111,5 +111,4 @@ export default function TopBar() {
     </header>
   );
 }
-
 

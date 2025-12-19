@@ -1,4 +1,4 @@
-﻿import "./globals.css";
+import "./globals.css";
 import TopBar from "../components/TopBar";
 import { Inter, Libre_Baskerville } from "next/font/google";
 const inter = Inter({
@@ -18,9 +18,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${libre.variable}`}>
       <body>
         <TopBar />
-        <main className="pt-[112px]">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );
 }
-

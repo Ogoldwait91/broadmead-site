@@ -1,5 +1,4 @@
-﻿/* eslint-disable @next/next/no-img-element */
-"use client";
+﻿"use client";
 
 type Props = {
   src: string;
@@ -32,4 +31,3 @@ export default function Img({ src, alt, className }: Props) {
     </div>
   );
 }
-

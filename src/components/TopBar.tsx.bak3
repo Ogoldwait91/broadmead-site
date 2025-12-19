@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function TopBar() {
   const nav = [
-    { href: "/rooms",   label: "Rooms" },
+    { href: "/rooms", label: "Rooms" },
     { href: "/gallery", label: "Gallery" },
     { href: "/explore", label: "Explore" },
-    { href: "/faq",     label: "FAQs" },
+    { href: "/faq", label: "FAQs" },
     { href: "/contact", label: "Contact" },
   ];
   const [open, setOpen] = useState(false);
@@ -29,25 +29,11 @@ export default function TopBar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Dark tint at all times; slightly lighter when scrolled
-  const bgColor   = scrolled ? "rgba(15,53,64,0.90)" : "rgba(15,53,64,0.85)";
-  const txtColor  = "#ffffff";
-  const borderCol = scrolled ? "rgba(255,255,255,0.20)" : "rgba(255,255,255,0.15)";
-
   return (
-    <header
-      className="fixed top-0 left-1/2 -translate-x-1/2 w-screen z-50" // changed from sticky to fixed
-      style={{
-        background: bgColor,
-        color: txtColor,
-        backdropFilter: "blur(14px)",
-        WebkitBackdropFilter: "blur(14px)",
-        borderBottom: `1px solid ${borderCol}`,
-      }}
-    >
+    <header className={`topbar ${scrolled ? "shadow-sm" : ""}`} data-header>
       <div className="announcement">
         <span>Spring escapes: garden‑to‑table breakfasts & countryside walks.</span>
-        <Link href="#offers" className="underline underline-offset-4 hover:opacity-90">
+        <Link href="#offers" className="underline underline-offset-4 hover:text-black">
           View offers
         </Link>
       </div>
@@ -62,9 +48,7 @@ export default function TopBar() {
               {item.label}
             </Link>
           ))}
-          <Link href="#book" className="btn btnSolid">
-            Check availability
-          </Link>
+          <Link href="#book" className="btn btnSolid">Check availability</Link>
         </nav>
         <button
           type="button"
@@ -75,15 +59,9 @@ export default function TopBar() {
         >
           <span className="sr-only">Menu</span>
           <div className="flex flex-col gap-1">
-            <span
-              className={`h-[2px] w-5 bg-current transition ${open ? "translate-y-[3px] rotate-45" : ""}`}
-            />
-            <span
-              className={`h-[2px] w-5 bg-current transition ${open ? "opacity-0" : ""}`}
-            />
-            <span
-              className={`h-[2px] w-5 bg-current transition ${open ? "-translate-y-[5px] -rotate-45" : ""}`}
-            />
+            <span className={`h-[2px] w-5 bg-current transition ${open ? "translate-y-[3px] rotate-45" : ""}`} />
+            <span className={`h-[2px] w-5 bg-current transition ${open ? "opacity-0" : ""}`} />
+            <span className={`h-[2px] w-5 bg-current transition ${open ? "-translate-y-[5px] -rotate-45" : ""}`} />
           </div>
         </button>
       </div>
@@ -111,5 +89,3 @@ export default function TopBar() {
     </header>
   );
 }
-
-

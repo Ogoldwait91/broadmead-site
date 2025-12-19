@@ -36,18 +36,17 @@ export default function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/#book" className="btn btn-primary" style={{ padding: "0.6rem 1rem" }}>
+          <a href="/#book" className="btn btn-primary" style={{ padding: "0.6rem 1rem" }}>
             Book Direct
-          </Link>
+          </a>
         </nav>
 
         <div className="md:hidden">
-          <Link href="/#book" className="btn btn-primary" style={{ padding: "0.55rem 0.9rem" }}>
+          <a href="/#book" className="btn btn-primary" style={{ padding: "0.55rem 0.9rem" }}>
             Book
-          </Link>
+          </a>
         </div>
       </div>
     </header>
   );
 }
-

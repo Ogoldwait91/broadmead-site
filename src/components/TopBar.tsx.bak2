@@ -60,7 +60,7 @@ export default function TopBar() {
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           {/* Brand */}
-          <a href="/" className="group flex items-baseline gap-2">
+          <Link href="/" className="group flex items-baseline gap-2">
             <span className="font-serif text-lg tracking-tight text-black">
               Broadmead
             </span>
@@ -68,7 +68,7 @@ export default function TopBar() {
               BOUTIQUE B&amp;B
             </span>
             <span className="block h-[1px] w-0 bg-black/70 transition-all duration-300 group-hover:w-10" />
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-6 lg:flex">
@@ -160,6 +160,7 @@ export default function TopBar() {
     </header>
   );
 }
+
 
 
 
