@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 /**
- * The homepage introduces Broadmead in the simplest possible way:
+ * The homepage introduces The Broadmead in the simplest possible way:
  * a concise hero, a sense of feeling, a glimpse of the house itself
  * and curated insight into Tenby. Each section stays calm and invitational.
  */
@@ -16,7 +16,7 @@ export default function HomePage() {
       >
         <Image
           src="/images/hero.jpg"
-          alt="Broadmead Boutique B&B exterior"
+          alt="The Broadmead Boutique B&B exterior"
           fill
           priority
           quality={90}
@@ -34,7 +34,7 @@ export default function HomePage() {
             alignItems: "center",
           }}
         >
-          <div className="container" style={{ paddingTop: 72, paddingBottom: 48 }}>
+          <div className="container editorialCenter" style={{ paddingTop: 72, paddingBottom: 48 }}>
             <div
               style={{
                 maxWidth: 640, margin: "0 auto", textAlign: "center",
@@ -97,26 +97,21 @@ export default function HomePage() {
 
       {/* Editorial intro with ghost logo (Pig-style) */}
       <section className="section ghostSection">
-
-        <div className="ghostLogoWrap" aria-hidden="true">
-          <Image
-            src="/images/broadmead-outline.png"
-            alt=""
-            width={1400}
-            height={500}
-            className="ghostLogo"
-          />
-        </div>
-
         <div className="container">
-          <h2 className="kicker">The House</h2>
-          <p>
-            A calm, design-led house just above the harbour  made for unhurried stays,
-            long breakfasts, and time by the sea.
-          </p>
-        </div>
+          <div className="ghostCopy">
+            <h2 className="kicker">The House</h2>
+            <p>
+              Set in a quiet, leafy corner of Tenby, <strong>The Broadmead</strong> is an 18th-century country house surrounded by gardens, sky and space, just a short walk from the harbour, beaches and walled town.
+            </p>
 
+            <p>
+              Inside, it’s unhurried and welcoming: individually designed rooms, comfortable places to linger, and mornings that begin slowly over a generous breakfast. Days drift between sea air and garden light; evenings return to soft corners, a quiet drink, and the feeling of being exactly where you’re meant to be.
+            </p>
+
+          </div>
+        </div>
       </section>
+
 
 
       {/* Existing first editorial content stays here */}
@@ -125,9 +120,9 @@ export default function HomePage() {
       {/* THE FEELING (short, editorial) */}
       <section className="section" style={{ paddingBottom: 0 }}>
         <div className="container">
-          <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
+          <div className="editorialCenter">
             <h2 style={{ fontSize: 34, marginTop: 12 }}>
-              Unhurried, comfortable, quietly confident.
+              Comfortable, considered, quietly confident.
             </h2>
             <p
               style={{
@@ -136,40 +131,23 @@ export default function HomePage() {
                 maxWidth: 660,
                 lineHeight: 1.7,
               }}
-            >
-              Soft light, good coffee and a calm room that instantly feels like
-              yours.
-            </p>
-
-            <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 10 }}>
-              {["Best sleep", "Seasonal breakfast", "Walk to the harbour"].map(
-                (t) => (
-                  <span
-                    key={t}
-                    style={{
-                      border: "1px solid rgba(15,31,38,.16)",
-                      borderRadius: 999,
-                      padding: "8px 12px",
-                      fontSize: 13,
-                      opacity: 0.9,
-                      background: "rgba(246,240,232,.55)",
-                    }}
-                  >
-                    {t}
-                  </span>
-                )
-              )}
-            </div>
-
-            <div style={{ marginTop: 14 }}>
-              <Link href="/about" className="pigGalleryLink">
-                Read our story
-              </Link>
-            </div>
-          </div>
+            >Soft light, open space, and rooms that feel easy to settle into.</p>
+</div>
         </div>
-        
+
       </section>
+
+      <section className="section reviewSection">
+        <div className="container">
+          <blockquote className="editorialReview">
+            <p>
+              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
+            </p>
+            <cite>— Recent guest at The Broadmead</cite>
+          </blockquote>
+        </div>
+      </section>
+
 
       {/* WATERMARK EDITORIAL SECTION */}
       <section className="section watermarkSection">
@@ -177,7 +155,7 @@ export default function HomePage() {
           <div className="kicker">A house for unhurried stays</div>
           <h2>Quiet, design-led, and close to the sea.</h2>
           <p>
-            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
+            The Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
             Nothing loud. Everything considered.
           </p>
         </div>
@@ -249,18 +227,30 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        
+
       </section>
 
+      <section className="section reviewSection">
+        <div className="container">
+          <blockquote className="editorialReview">
+            <p>
+              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
+            </p>
+            <cite>— Recent guest at The Broadmead</cite>
+          </blockquote>
+        </div>
+      </section>
+
+
       {/* WATERMARK EDITORIAL SECTION */}
-      
+
       {/* HOUSE NARRATIVE  evokes the feeling of living here */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
+          <div className="editorialCenter">
             <h2 style={{ fontSize: 32, marginTop: 12 }}>A place to exhale.</h2>
             <p style={{ marginTop: 12, maxWidth: 720, opacity: 0.9 }}>
-              Broadmead feels less like a hotel and more like the house you wish you owned
+              The Broadmead feels less like a hotel and more like the house you wish you owned
               quiet, gentle and designed for lingering.
             </p>
             <p style={{ marginTop: 10, maxWidth: 720, opacity: 0.9 }}>
@@ -271,15 +261,27 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        
+
       </section>
 
+      <section className="section reviewSection">
+        <div className="container">
+          <blockquote className="editorialReview">
+            <p>
+              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
+            </p>
+            <cite>— Recent guest at The Broadmead</cite>
+          </blockquote>
+        </div>
+      </section>
+
+
       {/* WATERMARK EDITORIAL SECTION */}
-      
+
       {/* CURATED TENBY  a taste of whats beyond the door */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
+          <div className="editorialCenter">
             <h2 style={{ fontSize: 32, marginTop: 12 }}>Our favourite Tenby moments.</h2>
             <p style={{ marginTop: 12, maxWidth: 720, opacity: 0.9 }}>
               Whether it&apos;s the right beach for the wind, a harbour walk at dusk or the table you can&apos;t miss,
@@ -290,11 +292,23 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        
+
       </section>
 
+      <section className="section reviewSection">
+        <div className="container">
+          <blockquote className="editorialReview">
+            <p>
+              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
+            </p>
+            <cite>— Recent guest at The Broadmead</cite>
+          </blockquote>
+        </div>
+      </section>
+
+
       {/* WATERMARK EDITORIAL SECTION */}
-      
+
       {/* TWO JOURNEY CARDS (stay / explore) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
@@ -352,22 +366,34 @@ export default function HomePage() {
             Tip: replace the two placeholder images with your best room and Tenby shots.
           </div>
         </div>
-        
+
       </section>
 
+      <section className="section reviewSection">
+        <div className="container">
+          <blockquote className="editorialReview">
+            <p>
+              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
+            </p>
+            <cite>— Recent guest at The Broadmead</cite>
+          </blockquote>
+        </div>
+      </section>
+
+
       {/* WATERMARK EDITORIAL SECTION */}
-      
+
       {/* TRUST (single line, quiet) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
+          <div className="editorialCenter">
             {/* Use a short review quote instead of generic wording */}
             <p style={{ fontSize: 16, opacity: 0.9 }}>
               The perfect base for exploring Tenby  calm rooms, thoughtful hosts.
             </p>
             <div style={{ marginTop: 10 }}>
               <a
-                href="https://www.google.com/search?q=Broadmead+Boutique+B%26B+Tenby+reviews"
+                href="https://www.google.com/search?q=The Broadmead+Boutique+B%26B+Tenby+reviews"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="pigGalleryLink"
@@ -377,11 +403,23 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        
+
       </section>
 
+      <section className="section reviewSection">
+        <div className="container">
+          <blockquote className="editorialReview">
+            <p>
+              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
+            </p>
+            <cite>— Recent guest at The Broadmead</cite>
+          </blockquote>
+        </div>
+      </section>
+
+
       {/* WATERMARK EDITORIAL SECTION */}
-      
+
       {/* BOOKING CTA */}
       <section id="book" className="section">
         <div className="container">
@@ -403,19 +441,27 @@ export default function HomePage() {
           <div
             style={{ paddingTop: 28, fontSize: 13, color: "rgba(15,31,38,0.55)" }}
           >
-            <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
-              Broadmead Boutique B&B  Tenby, Pembrokeshire
+            <div className="editorialCenter">
+              The Broadmead Boutique B&B  Tenby, Pembrokeshire
               <br />
               A calm, characterful base for the coast.
             </div>
           </div>
         </div>
-        
+
       </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
-      
+
     </div>
   );
-} 
+}
+
+
+
+
+
+
+
+
 
