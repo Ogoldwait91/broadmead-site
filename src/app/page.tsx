@@ -42,20 +42,20 @@ export default function HomePage() {
                 textShadow: "0 2px 28px rgba(0,0,0,0.55)",
               }}
             >
-<h1 className="heroTitle">The Broadmead<br/>in Tenby.</h1>
+              <h1 className="heroTitle">The Broadmead<br />in Tenby.</h1>
 
               {/* A single line of copy conveys the feeling without overselling */}
-{/* Primary call‑to‑action only */}
+              {/* Primary call-to-action only */}
               <div className="heroCtas" style={{ display: "flex", justifyContent: "center", marginTop: 14 }}>
                 <a className="btn btnSolid" href="#book" style={{ background: "rgba(15,53,64,0.92)", border: "1px solid rgba(255,255,255,0.22)", boxShadow: "0 12px 26px rgba(0,0,0,0.25)" }}>Check availability</a>
               </div>
 
               {/* Quiet reassurance about booking direct */}
-</div>
+            </div>
           </div>
         </div>
 
-        
+
         <div
           className="heroScrollCue"
           aria-hidden="true"
@@ -93,24 +93,40 @@ export default function HomePage() {
             }}
           />
         </div>
-</section>
+      </section>
 
-      {/* WATERMARK EDITORIAL SECTION */}
-      <section className="section watermarkSection">
-        <div className="container watermarkInner">
-          <div className="kicker">A house for unhurried stays</div>
-          <h2>Quiet, design-led, and close to the sea.</h2>
+      {/* Editorial intro with ghost logo (Pig-style) */}
+      <section className="section ghostSection">
+
+        <div className="ghostLogoWrap" aria-hidden="true">
+          <Image
+            src="/images/broadmead-outline.png"
+            alt=""
+            width={1400}
+            height={500}
+            className="ghostLogo"
+          />
+        </div>
+
+        <div className="container">
+          <h2 className="kicker">The House</h2>
           <p>
-            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
-            Nothing loud. Everything considered.
+            A calm, design-led house just above the harbour  made for unhurried stays,
+            long breakfasts, and time by the sea.
           </p>
         </div>
+
       </section>
-{/* THE FEELING (short, editorial) */}
+
+
+      {/* Existing first editorial content stays here */}
+
+
+      {/* THE FEELING (short, editorial) */}
       <section className="section" style={{ paddingBottom: 0 }}>
         <div className="container">
           <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
-<h2 style={{ fontSize: 34, marginTop: 12 }}>
+            <h2 style={{ fontSize: 34, marginTop: 12 }}>
               Unhurried, comfortable, quietly confident.
             </h2>
             <p
@@ -152,7 +168,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-              <div
+        <div
           className="heroScrollCue"
           aria-hidden="true"
           style={{
@@ -189,7 +205,7 @@ export default function HomePage() {
             }}
           />
         </div>
-</section>
+      </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
       <section className="section watermarkSection">
@@ -197,12 +213,12 @@ export default function HomePage() {
           <div className="kicker">A house for unhurried stays</div>
           <h2>Quiet, design-led, and close to the sea.</h2>
           <p>
-            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
             Nothing loud. Everything considered.
           </p>
         </div>
       </section>
-{/* EDITORIAL IMAGE GRID (kept to sell the vibe) */}
+      {/* EDITORIAL IMAGE GRID (kept to sell the vibe) */}
       <section className="section" style={{ paddingTop: 28 }}>
         <div className="container">
           <div
@@ -269,7 +285,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-              <div
+        <div
           className="heroScrollCue"
           aria-hidden="true"
           style={{
@@ -306,7 +322,7 @@ export default function HomePage() {
             }}
           />
         </div>
-</section>
+      </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
       <section className="section watermarkSection">
@@ -314,18 +330,18 @@ export default function HomePage() {
           <div className="kicker">A house for unhurried stays</div>
           <h2>Quiet, design-led, and close to the sea.</h2>
           <p>
-            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
             Nothing loud. Everything considered.
           </p>
         </div>
       </section>
-{/* HOUSE NARRATIVE – evokes the feeling of living here */}
+      {/* HOUSE NARRATIVE  evokes the feeling of living here */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
-<h2 style={{ fontSize: 32, marginTop: 12 }}>A place to exhale.</h2>
+            <h2 style={{ fontSize: 32, marginTop: 12 }}>A place to exhale.</h2>
             <p style={{ marginTop: 12, maxWidth: 720, opacity: 0.9 }}>
-              Broadmead feels less like a hotel and more like the house you wish you owned —
+              Broadmead feels less like a hotel and more like the house you wish you owned
               quiet, gentle and designed for lingering.
             </p>
             <p style={{ marginTop: 10, maxWidth: 720, opacity: 0.9 }}>
@@ -336,7 +352,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-              <div
+        <div
           className="heroScrollCue"
           aria-hidden="true"
           style={{
@@ -373,7 +389,7 @@ export default function HomePage() {
             }}
           />
         </div>
-</section>
+      </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
       <section className="section watermarkSection">
@@ -381,16 +397,16 @@ export default function HomePage() {
           <div className="kicker">A house for unhurried stays</div>
           <h2>Quiet, design-led, and close to the sea.</h2>
           <p>
-            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
             Nothing loud. Everything considered.
           </p>
         </div>
       </section>
-{/* CURATED TENBY – a taste of what’s beyond the door */}
+      {/* CURATED TENBY  a taste of whats beyond the door */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
-<h2 style={{ fontSize: 32, marginTop: 12 }}>Our favourite Tenby moments.</h2>
+            <h2 style={{ fontSize: 32, marginTop: 12 }}>Our favourite Tenby moments.</h2>
             <p style={{ marginTop: 12, maxWidth: 720, opacity: 0.9 }}>
               Whether it&apos;s the right beach for the wind, a harbour walk at dusk or the table you can&apos;t miss,
               we curate a few local favourites just for you.
@@ -400,7 +416,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-              <div
+        <div
           className="heroScrollCue"
           aria-hidden="true"
           style={{
@@ -437,7 +453,7 @@ export default function HomePage() {
             }}
           />
         </div>
-</section>
+      </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
       <section className="section watermarkSection">
@@ -445,12 +461,12 @@ export default function HomePage() {
           <div className="kicker">A house for unhurried stays</div>
           <h2>Quiet, design-led, and close to the sea.</h2>
           <p>
-            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
             Nothing loud. Everything considered.
           </p>
         </div>
       </section>
-{/* TWO JOURNEY CARDS (stay / explore) */}
+      {/* TWO JOURNEY CARDS (stay / explore) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div
@@ -467,7 +483,7 @@ export default function HomePage() {
                 />
               </div>
               <div style={{ padding: 18 }}>
-<h3 style={{ fontSize: 20, marginTop: 10 }}>Rooms made for sleep.</h3>
+                <h3 style={{ fontSize: 20, marginTop: 10 }}>Rooms made for sleep.</h3>
                 <p style={{ marginTop: 10, fontSize: 14, opacity: 0.9 }}>
                   Calm interiors and quiet nights.
                 </p>
@@ -490,7 +506,7 @@ export default function HomePage() {
                 />
               </div>
               <div style={{ padding: 18 }}>
-<h3 style={{ fontSize: 20, marginTop: 10 }}>Tenby, at an unhurried pace.</h3>
+                <h3 style={{ fontSize: 20, marginTop: 10 }}>Tenby, at an unhurried pace.</h3>
                 <p style={{ marginTop: 10, fontSize: 14, opacity: 0.9 }}>
                   Harbour walks, the right beach for the tide and the best tables.
                 </p>
@@ -504,10 +520,10 @@ export default function HomePage() {
           </div>
 
           <div style={{ marginTop: 12, fontSize: 13, opacity: 0.75 }}>
-            Tip: replace the two placeholder images with your best “room” and “Tenby” shots.
+            Tip: replace the two placeholder images with your best room and Tenby shots.
           </div>
         </div>
-              <div
+        <div
           className="heroScrollCue"
           aria-hidden="true"
           style={{
@@ -544,7 +560,7 @@ export default function HomePage() {
             }}
           />
         </div>
-</section>
+      </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
       <section className="section watermarkSection">
@@ -552,18 +568,18 @@ export default function HomePage() {
           <div className="kicker">A house for unhurried stays</div>
           <h2>Quiet, design-led, and close to the sea.</h2>
           <p>
-            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
             Nothing loud. Everything considered.
           </p>
         </div>
       </section>
-{/* TRUST (single line, quiet) */}
+      {/* TRUST (single line, quiet) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
             {/* Use a short review quote instead of generic wording */}
             <p style={{ fontSize: 16, opacity: 0.9 }}>
-              “The perfect base for exploring Tenby — calm rooms, thoughtful hosts.”
+              The perfect base for exploring Tenby  calm rooms, thoughtful hosts.
             </p>
             <div style={{ marginTop: 10 }}>
               <a
@@ -572,12 +588,12 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="pigGalleryLink"
               >
-                Read recent reviews →
+                Read recent reviews ?
               </a>
             </div>
           </div>
         </div>
-              <div
+        <div
           className="heroScrollCue"
           aria-hidden="true"
           style={{
@@ -614,7 +630,7 @@ export default function HomePage() {
             }}
           />
         </div>
-</section>
+      </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
       <section className="section watermarkSection">
@@ -622,16 +638,16 @@ export default function HomePage() {
           <div className="kicker">A house for unhurried stays</div>
           <h2>Quiet, design-led, and close to the sea.</h2>
           <p>
-            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
             Nothing loud. Everything considered.
           </p>
         </div>
       </section>
-{/* BOOKING CTA */}
+      {/* BOOKING CTA */}
       <section id="book" className="section">
         <div className="container">
           <div className="surface" style={{ padding: 22 }}>
-<h2 style={{ fontSize: 28, marginTop: 12 }}>Availability & rates.</h2>
+            <h2 style={{ fontSize: 28, marginTop: 12 }}>Availability & rates.</h2>
             <p style={{ marginTop: 10, maxWidth: 860 }}>
               Quick link to your live booking page. We can embed the booking widget later.
             </p>
@@ -649,13 +665,13 @@ export default function HomePage() {
             style={{ paddingTop: 28, fontSize: 13, color: "rgba(15,31,38,0.55)" }}
           >
             <div style={{ maxWidth: 560, textAlign: "center", margin: "0 auto" }}>
-              Broadmead Boutique B&B · Tenby, Pembrokeshire
+              Broadmead Boutique B&B  Tenby, Pembrokeshire
               <br />
               A calm, characterful base for the coast.
             </div>
           </div>
         </div>
-              <div
+        <div
           className="heroScrollCue"
           aria-hidden="true"
           style={{
@@ -692,7 +708,7 @@ export default function HomePage() {
             }}
           />
         </div>
-</section>
+      </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
       <section className="section watermarkSection">
@@ -700,29 +716,11 @@ export default function HomePage() {
           <div className="kicker">A house for unhurried stays</div>
           <h2>Quiet, design-led, and close to the sea.</h2>
           <p>
-            Broadmead is a calm base for Tenby — light rooms, thoughtful details, and breakfasts that follow the season.
+            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
             Nothing loud. Everything considered.
           </p>
         </div>
       </section>
-</div>
+    </div>
   );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} 

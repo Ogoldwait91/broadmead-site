@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root{
   --bg: #fbfaf7;
   --text: #0f1f26;
@@ -597,7 +598,7 @@ html{
   opacity: 0.9;
 }
 
-/* ===== Guest quote (Soho Houseâ€“style) ===== */
+/* ===== Guest quote (Soho HouseÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“style) ===== */
 .guestQuote{
   font-family: var(--font-serif);
   font-size: 20px;
@@ -611,7 +612,7 @@ html{
 }
 
 .guestQuote::before{
-  content: "â€œ";
+  content: "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ";
   position: absolute;
   left: 0;
   top: -4px;
@@ -620,7 +621,7 @@ html{
   color: rgba(15,31,38,0.25);
 }
 
-/* ===== House notes (Soho Houseâ€“style) ===== */
+/* ===== House notes (Soho HouseÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“style) ===== */
 .houseNotes{
   display: grid;
   gap: 32px;
@@ -1495,7 +1496,7 @@ body[data-scrolled="true"] .topMobileBtn{
   display: none !important;
 }
 /* =========================
-   HEADER – Pig-style soft bar
+   HEADER ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ Pig-style soft bar
    ========================= */
 
 .topHeader{
@@ -1651,4 +1652,255 @@ body[data-scrolled="true"] .topHeader{
     contrast(1.05);
 }
 /* --- end logo polish --- */
+
+
+/* =========================
+   Ghost logo watermark
+   ========================= */
+
+.ghostSection{
+  position: relative;
+  min-height: 360px; /* ensures the section has height */
+  overflow: hidden;
+}
+
+.ghostLogoWrap{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.ghostLogo{
+  object-fit: contain;
+  width: min(1080px, 92vw);
+  opacity: 0.045;
+  transform: translateY(14%);
+  filter:
+    grayscale(100%)
+    contrast(90%)
+    drop-shadow(0 18px 60px rgba(0,0,0,0.15));
+}
+.ghostLogoWrap{
+  position: absolute;
+}
+
+.ghostLogoWrap::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* Ensure text is above watermark */
+.ghostSection > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile tuning */
+@media (max-width: 900px){
+  .ghostLogo{
+    width: 120vw;
+    opacity: 0.025;
+    transform: translateY(24%);
+  }
+}
+/* ========================= */
+
+
+
+/* Ghost logo watermark (Pig-style) */
+.ghostSection{
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.ghostLogoWrap{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ghostLogoInner{
+  position: relative;           /* required for next/image fill */
+  width: min(1080px, 92vw);
+  height: 320px;                /* required for next/image fill */
+}
+
+.ghostLogo{
+  object-fit: contain;
+  opacity: 0.045;
+  filter: grayscale(100%) contrast(92%);
+  transform: translateY(14%);
+}
+
+.ghostSection .container{
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px){
+  .ghostLogoInner{
+    width: 110vw;
+    height: 240px;
+  }
+  .ghostLogo{
+    opacity: 0.03;
+    transform: translateY(22%);
+  }
+}
+/* =========================
+   Ghost logo watermark (Pig-style)
+   ========================= */
+
+.ghostSection{
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.ghostLogoWrap{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ghostLogo{
+  object-fit: contain;
+  width: min(1080px, 92vw);
+  opacity: 0.075;
+  filter: brightness(0.18) contrast(110%) grayscale(100%);
+  transform: translateY(14%);
+}
+
+/* Ensure text sits above watermark */
+.ghostSection > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile tuning */
+@media (max-width: 900px){
+  .ghostLogo{
+    width: 120vw;
+    opacity: 0.04;
+    transform: translateY(24%);
+  }
+}
+ 
+/* ===== Ghost outline watermark (Pig-style) ===== */
+.ghostSection{
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.ghostLogoWrap{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ghostLogoWrap > span{
+  position: relative;
+  width: min(1080px, 92vw);
+  height: 320px;
+}
+
+.ghostLogo{
+  object-fit: contain;
+  opacity: 0.12;
+  filter:
+    brightness(0.15)
+    contrast(110%)
+    drop-shadow(0 24px 80px rgba(0,0,0,0.18));
+  transform: translateY(14%);
+}
+
+/* Ensure text sits above watermark */
+.ghostSection > .container{
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile tuning */
+@media (max-width: 900px){
+  .ghostLogoWrap > span{
+    width: 120vw;
+    height: 220px;
+  }
+  .ghostLogo{
+    opacity: 0.08;
+    transform: translateY(24%);
+  }
+}
+/* ===== End ghost watermark ===== */
+ 
+/* ===== Ghost outline watermark (Pig-style) ===== */
+.ghostSection{
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.ghostLogoWrap{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ghostLogoWrap > span{
+  position: relative;
+  width: min(1080px, 92vw);
+  height: 320px;
+}
+
+.ghostLogo{
+  object-fit: contain;
+  opacity: 0.12;
+  filter:
+    brightness(0.15)
+    contrast(110%)
+    drop-shadow(0 24px 80px rgba(0,0,0,0.18));
+  transform: translateY(14%);
+}
+
+/* Ensure text sits above watermark */
+.ghostSection > .container{
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile tuning */
+@media (max-width: 900px){
+  .ghostLogoWrap > span{
+    width: 120vw;
+    height: 220px;
+  }
+  .ghostLogo{
+    opacity: 0.08;
+    transform: translateY(24%);
+  }
+}
+/* ===== End ghost watermark ===== */
 
