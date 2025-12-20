@@ -328,7 +328,7 @@ header .announcement{
   color: rgba(255,255,255,0.88);
 }
 header .announcement a{
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.87);
 }
 
 /* =========================
@@ -549,7 +549,7 @@ h1, h2, h3{
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.82);
+  color: rgba(255,255,255,0.87);
   text-shadow: 0 2px 18px rgba(0,0,0,0.45);
 }
 
@@ -829,7 +829,7 @@ header[data-header]{
   width: 100%;
   z-index: 50;
 
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.87);
   background: rgba(15,53,64,0.18);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -844,7 +844,7 @@ header[data-header]{
   width: 100%;
   z-index: 50;
 
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.87);
   background: rgba(15,53,64,0.18);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -935,7 +935,7 @@ header[data-header]{
   width: 100%;
   z-index: 50;
 
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.87);
   background: rgba(15,53,64,0.14);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -985,7 +985,7 @@ header[data-header] .announcement a{
 }
 
 header[data-header] .announcement a:hover{
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.87);
   border-bottom-color: rgba(255,255,255,0.42);
 }
 
@@ -1006,7 +1006,7 @@ header[data-header] .topbarInner{
 
 /* Brand */
 header[data-header] .brand{
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.87);
 }
 header[data-header] .brandSub{
   opacity: 0.72;
@@ -1017,7 +1017,7 @@ header[data-header] .nav{
   gap: 18px;
 }
 header[data-header] .navLink{
-  color: rgba(255,255,255,0.82);
+  color: rgba(255,255,255,0.87);
   text-decoration: none;
   font-size: 13.5px;
   opacity: 0.92;
@@ -1301,7 +1301,7 @@ body[data-scrolled="true"] .topNavLink{
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.26);
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.87);
   background: rgba(255,255,255,0.06);
   transition: background-color .25s ease, border-color .25s ease, color .25s ease;
 }
@@ -1328,7 +1328,7 @@ body[data-scrolled="true"] .topCta:hover{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.87);
 }
 body[data-scrolled="true"] .topMobileBtn{
   border-color: rgba(15,31,38,0.14);
@@ -1396,7 +1396,7 @@ body[data-scrolled="true"] .topMobileLink{
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.26);
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.87);
   background: rgba(255,255,255,0.06);
 }
 body[data-scrolled="true"] .topMobileCta{
@@ -1659,6 +1659,9 @@ body[data-scrolled="true"] .topHeader{
    ========================= */
 
 .ghostSection{
+  min-height: unset !important;
+  display: block !important;
+  align-items: initial !important;
   position: relative;
   min-height: 360px; /* ensures the section has height */
   overflow: hidden;
@@ -2136,13 +2139,13 @@ body[data-scrolled="true"] .topHeader{
   position: relative;
   background-image:
     linear-gradient(
-      rgba(255,255,255,0.92),
-      rgba(255,255,255,0.92)
+      rgba(255,255,255,0.87),
+      rgba(255,255,255,0.87)
     ),
     url('/images/broadmead-outline.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 65%;     /* slightly smaller */
+  background-size: 75%;     /* slightly smaller */
   padding: 120px 0;
 }
 
@@ -2173,4 +2176,6 @@ body[data-scrolled="true"] .topHeader{
   position: relative;
   z-index: 1;
 }
+
+
 

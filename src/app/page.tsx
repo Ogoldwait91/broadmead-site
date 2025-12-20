@@ -121,30 +121,43 @@ export default function HomePage() {
       <section className="section" style={{ paddingBottom: 0 }}>
         <div className="container">
           <div className="editorialCenter">
-            <h2 style={{ fontSize: 34, marginTop: 12 }}>
-              Comfortable, considered, quietly confident.
-            </h2>
-            <p
+            <div
               style={{
-                marginTop: 14,
-                opacity: 0.9,
-                maxWidth: 660,
-                lineHeight: 1.7,
+                maxWidth: 820,
+                margin: "0 auto",
+                padding: "26px 22px",
+                borderRadius: 18,
+                background: "rgba(255,255,255,0.95)",
+                border: "1px solid rgba(15,31,38,0.14)",
+                boxShadow: "0 18px 44px rgba(0,0,0,0.06)",
+          marginTop: -16,
+          backdropFilter: "blur(6px)",
+          WebkitBackdropFilter: "blur(6px)",
               }}
-            >Soft light, open space, and rooms that feel easy to settle into.</p>
-</div>
-        </div>
+            >
+              <h2 style={{ fontSize: 34, marginTop: 12 }}>
+                Comfortable, considered, quietly confident.
+              </h2>
 
-      </section>
+              <p
+                style={{
+                  marginTop: 14,
+                  opacity: 0.9,
+                  maxWidth: 660,
+                  lineHeight: 1.7,
+                }}
+              >
+                Soft light, open space, and rooms that feel easy to settle into.
+              </p>
 
-      <section className="section reviewSection">
-        <div className="container">
-          <blockquote className="editorialReview">
-            <p>
-              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
-            </p>
-            <cite>— Recent guest at The Broadmead</cite>
-          </blockquote>
+              <blockquote className="editorialReview" style={{ marginTop: 18 }}>
+                <p>
+                  “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
+                </p>
+                <cite>— Recent guest at The Broadmead</cite>
+              </blockquote>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -230,16 +243,6 @@ export default function HomePage() {
 
       </section>
 
-      <section className="section reviewSection">
-        <div className="container">
-          <blockquote className="editorialReview">
-            <p>
-              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
-            </p>
-            <cite>— Recent guest at The Broadmead</cite>
-          </blockquote>
-        </div>
-      </section>
 
 
       {/* WATERMARK EDITORIAL SECTION */}
@@ -264,16 +267,6 @@ export default function HomePage() {
 
       </section>
 
-      <section className="section reviewSection">
-        <div className="container">
-          <blockquote className="editorialReview">
-            <p>
-              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
-            </p>
-            <cite>— Recent guest at The Broadmead</cite>
-          </blockquote>
-        </div>
-      </section>
 
 
       {/* WATERMARK EDITORIAL SECTION */}
@@ -295,16 +288,6 @@ export default function HomePage() {
 
       </section>
 
-      <section className="section reviewSection">
-        <div className="container">
-          <blockquote className="editorialReview">
-            <p>
-              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
-            </p>
-            <cite>— Recent guest at The Broadmead</cite>
-          </blockquote>
-        </div>
-      </section>
 
 
       {/* WATERMARK EDITORIAL SECTION */}
@@ -369,16 +352,6 @@ export default function HomePage() {
 
       </section>
 
-      <section className="section reviewSection">
-        <div className="container">
-          <blockquote className="editorialReview">
-            <p>
-              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
-            </p>
-            <cite>— Recent guest at The Broadmead</cite>
-          </blockquote>
-        </div>
-      </section>
 
 
       {/* WATERMARK EDITORIAL SECTION */}
@@ -389,7 +362,7 @@ export default function HomePage() {
           <div className="editorialCenter">
             {/* Use a short review quote instead of generic wording */}
             <p style={{ fontSize: 16, opacity: 0.9 }}>
-              The perfect base for exploring Tenby  calm rooms, thoughtful hosts.
+              The perfect base for exploring Tenby.
             </p>
             <div style={{ marginTop: 10 }}>
               <a
@@ -406,16 +379,6 @@ export default function HomePage() {
 
       </section>
 
-      <section className="section reviewSection">
-        <div className="container">
-          <blockquote className="editorialReview">
-            <p>
-              “A beautifully calm place to stay — thoughtful, welcoming, and perfectly placed for exploring Tenby.”
-            </p>
-            <cite>— Recent guest at The Broadmead</cite>
-          </blockquote>
-        </div>
-      </section>
 
 
       {/* WATERMARK EDITORIAL SECTION */}
@@ -456,6 +419,7 @@ export default function HomePage() {
     </div>
   );
 }
+
 
 
 
