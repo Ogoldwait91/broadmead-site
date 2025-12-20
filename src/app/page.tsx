@@ -168,43 +168,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div
-          className="heroScrollCue"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 28,
-            transform: "translateX(-50%)",
-            display: "grid",
-            gap: 10,
-            placeItems: "center",
-            opacity: 0.95,
-            color: "rgba(255,255,255,0.9)",
-            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
-            pointerEvents: "none",
-          }}
-        >
-          <span
-            className="heroScrollLabel"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              opacity: 0.85,
-            }}
-          >
-            SCROLL
-          </span>
-          <span
-            className="heroScrollLine"
-            style={{
-              width: 1,
-              height: 44,
-              background: "rgba(255,255,255,0.85)",
-              borderRadius: 999,
-            }}
-          />
-        </div>
+        
       </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
@@ -285,56 +249,11 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div
-          className="heroScrollCue"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 28,
-            transform: "translateX(-50%)",
-            display: "grid",
-            gap: 10,
-            placeItems: "center",
-            opacity: 0.95,
-            color: "rgba(255,255,255,0.9)",
-            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
-            pointerEvents: "none",
-          }}
-        >
-          <span
-            className="heroScrollLabel"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              opacity: 0.85,
-            }}
-          >
-            SCROLL
-          </span>
-          <span
-            className="heroScrollLine"
-            style={{
-              width: 1,
-              height: 44,
-              background: "rgba(255,255,255,0.85)",
-              borderRadius: 999,
-            }}
-          />
-        </div>
+        
       </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
-      <section className="section watermarkSection">
-        <div className="container watermarkInner">
-          <div className="kicker">A house for unhurried stays</div>
-          <h2>Quiet, design-led, and close to the sea.</h2>
-          <p>
-            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
-            Nothing loud. Everything considered.
-          </p>
-        </div>
-      </section>
+      
       {/* HOUSE NARRATIVE  evokes the feeling of living here */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
@@ -352,56 +271,11 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div
-          className="heroScrollCue"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 28,
-            transform: "translateX(-50%)",
-            display: "grid",
-            gap: 10,
-            placeItems: "center",
-            opacity: 0.95,
-            color: "rgba(255,255,255,0.9)",
-            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
-            pointerEvents: "none",
-          }}
-        >
-          <span
-            className="heroScrollLabel"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              opacity: 0.85,
-            }}
-          >
-            SCROLL
-          </span>
-          <span
-            className="heroScrollLine"
-            style={{
-              width: 1,
-              height: 44,
-              background: "rgba(255,255,255,0.85)",
-              borderRadius: 999,
-            }}
-          />
-        </div>
+        
       </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
-      <section className="section watermarkSection">
-        <div className="container watermarkInner">
-          <div className="kicker">A house for unhurried stays</div>
-          <h2>Quiet, design-led, and close to the sea.</h2>
-          <p>
-            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
-            Nothing loud. Everything considered.
-          </p>
-        </div>
-      </section>
+      
       {/* CURATED TENBY  a taste of whats beyond the door */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
@@ -416,56 +290,11 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div
-          className="heroScrollCue"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 28,
-            transform: "translateX(-50%)",
-            display: "grid",
-            gap: 10,
-            placeItems: "center",
-            opacity: 0.95,
-            color: "rgba(255,255,255,0.9)",
-            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
-            pointerEvents: "none",
-          }}
-        >
-          <span
-            className="heroScrollLabel"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              opacity: 0.85,
-            }}
-          >
-            SCROLL
-          </span>
-          <span
-            className="heroScrollLine"
-            style={{
-              width: 1,
-              height: 44,
-              background: "rgba(255,255,255,0.85)",
-              borderRadius: 999,
-            }}
-          />
-        </div>
+        
       </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
-      <section className="section watermarkSection">
-        <div className="container watermarkInner">
-          <div className="kicker">A house for unhurried stays</div>
-          <h2>Quiet, design-led, and close to the sea.</h2>
-          <p>
-            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
-            Nothing loud. Everything considered.
-          </p>
-        </div>
-      </section>
+      
       {/* TWO JOURNEY CARDS (stay / explore) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
@@ -523,56 +352,11 @@ export default function HomePage() {
             Tip: replace the two placeholder images with your best room and Tenby shots.
           </div>
         </div>
-        <div
-          className="heroScrollCue"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 28,
-            transform: "translateX(-50%)",
-            display: "grid",
-            gap: 10,
-            placeItems: "center",
-            opacity: 0.95,
-            color: "rgba(255,255,255,0.9)",
-            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
-            pointerEvents: "none",
-          }}
-        >
-          <span
-            className="heroScrollLabel"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              opacity: 0.85,
-            }}
-          >
-            SCROLL
-          </span>
-          <span
-            className="heroScrollLine"
-            style={{
-              width: 1,
-              height: 44,
-              background: "rgba(255,255,255,0.85)",
-              borderRadius: 999,
-            }}
-          />
-        </div>
+        
       </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
-      <section className="section watermarkSection">
-        <div className="container watermarkInner">
-          <div className="kicker">A house for unhurried stays</div>
-          <h2>Quiet, design-led, and close to the sea.</h2>
-          <p>
-            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
-            Nothing loud. Everything considered.
-          </p>
-        </div>
-      </section>
+      
       {/* TRUST (single line, quiet) */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
@@ -593,56 +377,11 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div
-          className="heroScrollCue"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 28,
-            transform: "translateX(-50%)",
-            display: "grid",
-            gap: 10,
-            placeItems: "center",
-            opacity: 0.95,
-            color: "rgba(255,255,255,0.9)",
-            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
-            pointerEvents: "none",
-          }}
-        >
-          <span
-            className="heroScrollLabel"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              opacity: 0.85,
-            }}
-          >
-            SCROLL
-          </span>
-          <span
-            className="heroScrollLine"
-            style={{
-              width: 1,
-              height: 44,
-              background: "rgba(255,255,255,0.85)",
-              borderRadius: 999,
-            }}
-          />
-        </div>
+        
       </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
-      <section className="section watermarkSection">
-        <div className="container watermarkInner">
-          <div className="kicker">A house for unhurried stays</div>
-          <h2>Quiet, design-led, and close to the sea.</h2>
-          <p>
-            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
-            Nothing loud. Everything considered.
-          </p>
-        </div>
-      </section>
+      
       {/* BOOKING CTA */}
       <section id="book" className="section">
         <div className="container">
@@ -671,56 +410,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div
-          className="heroScrollCue"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 28,
-            transform: "translateX(-50%)",
-            display: "grid",
-            gap: 10,
-            placeItems: "center",
-            opacity: 0.95,
-            color: "rgba(255,255,255,0.9)",
-            textShadow: "0 10px 22px rgba(0,0,0,0.45)",
-            pointerEvents: "none",
-          }}
-        >
-          <span
-            className="heroScrollLabel"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              opacity: 0.85,
-            }}
-          >
-            SCROLL
-          </span>
-          <span
-            className="heroScrollLine"
-            style={{
-              width: 1,
-              height: 44,
-              background: "rgba(255,255,255,0.85)",
-              borderRadius: 999,
-            }}
-          />
-        </div>
+        
       </section>
 
       {/* WATERMARK EDITORIAL SECTION */}
-      <section className="section watermarkSection">
-        <div className="container watermarkInner">
-          <div className="kicker">A house for unhurried stays</div>
-          <h2>Quiet, design-led, and close to the sea.</h2>
-          <p>
-            Broadmead is a calm base for Tenby  light rooms, thoughtful details, and breakfasts that follow the season.
-            Nothing loud. Everything considered.
-          </p>
-        </div>
-      </section>
+      
     </div>
   );
 } 
+
